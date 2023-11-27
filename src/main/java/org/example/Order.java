@@ -3,9 +3,9 @@ package org.example;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<sandwich> sandwiches = new ArrayList<>(); // all the sandwhiches in the oder... we can do this for the other stuff too later
-    ArrayList<drinks> drinks = new ArrayList<>();
-    ArrayList<chips> chips = new ArrayList<>();
+    ArrayList<Sandwich> sandwiches = new ArrayList<>(); // all the sandwhiches in the oder... we can do this for the other stuff too later
+    ArrayList<Drinks> drinks = new ArrayList<>();
+    ArrayList<Chips> chips = new ArrayList<>();
 
     public void create_receipt(){
         // save the order to a csv file and have the oder, tax, tip?, and total seperated by commas or |
