@@ -1,22 +1,44 @@
+//TODO: add bread types and fill out totalCost method
+
 package org.example;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sandwich {
 
     private int size;
-    boolean toasted;
-    // other stuff
+    private Double cost;
+    private List<Sandwich> sandwichList = new ArrayList<>();
+
+
+//default constructor
+    public Sandwich() {
+
+    }
+
 
     /*
-    parameterized constructor
-    may include bread type
-    or replace with a default constructor (no param)
-     */
+        parameterized constructor
+        may include bread type
+        or replace with a default constructor (no param)
+         */
     public Sandwich(int size){
         this.size = size;
     }
+
+
+    public int getSize() {
+        return size;
+    }
+
+
+    public Double totalCost(){
+        return cost;
+}
+
 
     /*
     come back to this method
@@ -40,6 +62,8 @@ public class Sandwich {
             System.out.println("Not a valid option");
         }
         return false; //default
+
+
     }
 
 }
