@@ -1,22 +1,40 @@
 package org.example.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInput {
-    private static Scanner scanner= new Scanner(System.in);
-    public static int getMenuOption(){
+    private final Scanner scanner;
+
+    public UserInput(){
+        this.scanner= new Scanner(System.in);
+    }
+
+    public int getMenuOption(int[] menuOptions){
     int option = -1;
-    boolean isValidOption= false;
-    do{
-        try {
-            option= scanner.nextInt();
-            isValidOption=true;
-        }catch (Exception e){
-            System.out.println("Invalid option. Please enter a valid number");
+    boolean isValid= false;
+    while (!isValid){
+        try{
+            option = scanner.nextInt();
+            isValid= isValidOption(option,menuOptions);
+        }catch (InputMismatchException e){
+            System.out.println("Invalid input. Please enter an available option.");
             scanner.nextLine();
         }
-    }while(!isValidOption);
-    scanner.close();
+    }
     return option;
+    }
+    public boolean isValidOption(int userOption, int []menuOptions ){
+        for(int option: menuOptions){
+            if(userOption == option){
+                return true;
+            }
+        }
+        System.out.println("Not an option sorry !");
+        return false;
+    }
+
+    public void closeScanner() {
+        scanner.close();
     }
 }
