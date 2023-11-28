@@ -4,6 +4,13 @@ public class PremiumToppings {
     //price and name of the toppings
     // we can add other methods later to make it more unique
 
+    String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
+    String[] cheese = {"american", "provolone", "cheddar", "swiss"};
+
+    public Double getMeatPrice(){
+        return 0.0;
+    }
+
     /*
     Meats: steak, ham, salami, roast beef, chicken, bacon
     4" 1.00

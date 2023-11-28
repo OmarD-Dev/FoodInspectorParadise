@@ -7,7 +7,8 @@ public enum Drinks { COKE, PEPSI, FANTA, SPRITE,MTNDEW,DRPEPPER;
     public static final int LARGE = 3;;
 
 
- /*   public int getSize(){
+ /* drink size
+ private int getSize(){
         return size;
     }*/
 
