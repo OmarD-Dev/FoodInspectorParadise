@@ -7,7 +7,12 @@ public class Sandwich {
 
     private int size;
     boolean toasted;
-    // other stuff
+    private Double cost;
+
+//default constructor
+    public Sandwich() {
+
+    }
 
     /*
     parameterized constructor
@@ -17,6 +22,11 @@ public class Sandwich {
     public Sandwich(int size){
         this.size = size;
     }
+
+public Double totalCost(){
+        return cost;
+}
+
 
     /*
     come back to this method
@@ -40,6 +50,8 @@ public class Sandwich {
             System.out.println("Not a valid option");
         }
         return false; //default
+
+
     }
 
 }
