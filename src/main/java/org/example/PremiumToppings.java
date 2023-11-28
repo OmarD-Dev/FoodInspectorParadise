@@ -7,10 +7,31 @@ public class PremiumToppings {
     String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
     String[] cheese = {"american", "provolone", "cheddar", "swiss"};
 
-    public Double getMeatPrice(){
-        return 0.0;
+    public Double getMeatPrice(int size){
+        switch(size){
+            case 4:
+                return 1.00;
+            case 8:
+                return 2.00;
+            case 12:
+                return 3.00;
+            default:
+                return  0.0;
+        }
     }
 
+    public Double addExtraMeat(int size){
+        switch(size){
+            case 4:
+                return 0.50;
+            case 8:
+                return 1.00;
+            case 12:
+                return 1.50;
+            default:
+                return  0.0;
+        }
+    }
     /*
     Meats: steak, ham, salami, roast beef, chicken, bacon
     4" 1.00

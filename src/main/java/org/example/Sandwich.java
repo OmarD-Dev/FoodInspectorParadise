@@ -19,7 +19,6 @@ public class Sandwich {
 
     }
 
-
     /*
         parameterized constructor
         may include bread type
