@@ -7,19 +7,21 @@ public class SandwichScreen {
 
     private int[] menuOptions={0,1,2,3,4};
     private OrderScreen back;
-    private UserInput userInput =  new UserInput();
+    private UserInput userInput;
 
-    public SandwichScreen(OrderScreen back){
+    public SandwichScreen(OrderScreen back,UserInput userInput){
         this.back=back;
+        this.userInput= userInput;
     }
 
-    public void startOrderScreen(){
+    public void startSandwichScreen(){
         System.out.println("""
-                Hello! What Would You Like to Order?
+                How would you like to make your sandwich?
                 Please Enter One of The Following Options:
-                1) Add Bread
-                2) Add Toppings
-                3) Add Chips
+                1) Select Bread
+                2) Select Sandwich Size
+                3) Add Your Toppings
+                4) Toast Sandwich
                 0) Cancel Order
                 """);
         System.out.print("\033[H\033[2J");

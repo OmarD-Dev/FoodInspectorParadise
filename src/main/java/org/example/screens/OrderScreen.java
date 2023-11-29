@@ -27,21 +27,21 @@ public class OrderScreen {
             case 1:
                 System.out.println("Let's build that sandwich!");
                 SandwichScreen ss = new SandwichScreen(this,userInput);
-                ss.startSanwichScreen();
+                ss.startSandwichScreen();
                 break;
             case 2:
                 System.out.println("Time to Get Our Drink On");
-                DrinksScreen ds = new DrinksScreen(this,userInput);
-                ds.startDrinksScreen();
+                //DrinksScreen ds = new DrinksScreen(this,userInput);
+                //ds.startDrinksScreen();
                 break;
             case 3:
                 System.out.println("Get your chips here");
-                ChipsScreen cs = new ChipsScreen(this,userInput);
-                cs.startChipsScreen();
+                //ChipsScreen cs = new ChipsScreen(this,userInput);
+               // cs.startChipsScreen();
                 break;
             case 4:
                 System.out.println("Show me the money!");
-                CheckoutScreen cos = new CheckoutScreen()(this,userInput);
+                CheckoutScreen cos = new CheckoutScreen(back,userInput);
                 cos.startCheckoutScreen();
                 break;
             case 5:
