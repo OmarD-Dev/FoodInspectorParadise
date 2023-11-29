@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<Sandwich> sandwiches = new ArrayList<>(); // all the sandwhiches in the oder... we can do this for the other stuff too later
+    ArrayList<Sandwich> sandwiches = new ArrayList<>(); // all the sandwiches in the oder... we can do this for the other stuff too later
     ArrayList<Drinks> drinks = new ArrayList<>();
     ArrayList<Chips> chips = new ArrayList<>();
 
