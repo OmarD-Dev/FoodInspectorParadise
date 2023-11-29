@@ -1,4 +1,4 @@
-package org.example.Sandwich;
+package org.example;
 
 public enum BreadType {
     WHITE(5.50),
