@@ -4,26 +4,19 @@ import java.util.ArrayList;
 
 public class PremiumToppings extends Toppings {
 
-   private ArrayList<String> meats ;
-   private ArrayList<String> cheeses ;
+    private ArrayList<String> meats;
+    private ArrayList<String> cheeses;
 
-    public PremiumToppings(){
-       this.meats = new ArrayList<>();
+    public PremiumToppings() {
+        this.meats = new ArrayList<>();
         this.cheeses = new ArrayList<>();
         initializeToppings();
     }
 
-public void  addPremiumMeat(String meat){
-        this.meats.add(meat);
-}
 
-    public void  addPremiumCheese(String cheese){
-        this.cheeses.add(cheese);
-    }
-
-    public double getMeatPrice(int size, int extraMeat){
+    public double getMeatPrice(int size, int extraMeat) {
         double meatCost = 0.0;
-        switch(size) {
+        switch (size) {
             case 4:
                 meatCost = 1.00;
                 break;
@@ -31,18 +24,18 @@ public void  addPremiumMeat(String meat){
                 meatCost = 2.00;
                 break;
             case 12:
-                meatCost =  3.00;
+                meatCost = 3.00;
                 break;
             default:
                 System.out.println("Not a valid size.");
-                return  0.0;
+                return 0.0;
         }
         return meatCost + (extraMeat * 0.5);
     }
 
-    public Double getCheesePrice(int size, int  extraCheese){
+    public Double getCheesePrice(int size, int extraCheese) {
         double cheeseCost = 0.0;
-        switch(size){
+        switch (size) {
             case 4:
                 cheeseCost = 0.75;
                 break;
@@ -54,9 +47,9 @@ public void  addPremiumMeat(String meat){
                 break;
             default:
                 System.out.println("Not a valid size.");
-                return  0.0;
+                return 0.0;
         }
-        return cheeseCost+ (extraCheese * 0.30);
+        return cheeseCost + (extraCheese * 0.30);
     }
 
     private void initializeToppings() {
@@ -72,6 +65,15 @@ public void  addPremiumMeat(String meat){
         cheeses.add("Cheddar");
         cheeses.add("Swiss");
     }
+
+    public void addMeat(String meat) {
+        this.meats.add(meat);
+    }
+
+    public void addCheese(String cheese) {
+        this.cheeses.add(cheese);
+    }
+
 
     public void displayMeat() {
         System.out.println("Meats: \n");
