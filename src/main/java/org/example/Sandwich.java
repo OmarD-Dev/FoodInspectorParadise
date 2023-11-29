@@ -1,40 +1,36 @@
 //TODO: add bread types and fill out totalCost method
 
 package org.example;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Sandwich {
 
+    private int size;
+    private Double cost;
+    private boolean toasted;
+    private BreadType breadType;
     private final int SMALL = 4;
     private final int MEDIUM = 8;
     private final int LARGE = 12;
-    private int size;
-    private Double cost;
+    private List<String> cheapToppings;
+    private PremiumToppings premiumToppings;
+
      List<Sandwich> sandwichList = new ArrayList<>();
 
 
-//default constructor
     public Sandwich() {
-
+    this.cheapToppings = new ArrayList<>();
+    this.premiumToppings = new PremiumToppings();
     }
 
-
-    /*
-            parameterized constructor
-            may include bread type
-            or replace with a default constructor (no param)
-             */
-    public Sandwich(int size){
-
+    public Sandwich(int size, BreadType breadType, boolean toasted){
         this.size = size;
+        this.breadType = breadType;
+        this.toasted = toasted;
+        this.cheapToppings = new ArrayList<>();
+        this.premiumToppings = new PremiumToppings();
     }
-
-
-
 
     public int getSize() {
         return size;
@@ -44,40 +40,64 @@ public class Sandwich {
         this.size = size;
     }
 
-
-
-
-    public Double totalCost(){
-        return cost;
-}
-
-
-    /*
-    come back to this method
-    we may want this method to return back to the order screen
-     */
-    public boolean isToasted(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Would you like to toast your sandwich? (Y/N)");
-        String choice = scanner.nextLine().toLowerCase();
-
-        switch (choice){
-            case "y", "yes":
-                System.out.println("Toasted.");
-                return true;
-            case "n", "no":
-                System.out.println("Un-toasted.");
-                return false;
-            default:
-                 System.out.println("Not a valid option");
-        }
-        return false; //default
-
-
+    public BreadType getBreadType() {
+        return breadType;
     }
 
+    public void setBreadType(BreadType breadType) {
+        this.breadType = breadType;
+    }
 
+    public boolean isToasted() {
+        return toasted;
+    }
 
+     public void setToasted(boolean toasted) {
+     this.toasted = toasted;
+   }
 
+    public void addCheapTopping(String topping) {
+        this.cheapToppings.add(topping);
+    }
+
+    public void addMeat(String meat){
+        this.premiumToppings.addMeat(meat);
+    }
+
+    public void addCheese(String cheese){
+        this.premiumToppings.addCheese(cheese);
+    }
+
+  public Double totalCost(){
+        cost = breadType.getCost();
+        switch (size){
+            case SMALL:
+                cost += 0;
+                break;
+            case MEDIUM:
+                cost += 1.50;
+                break;
+            case LARGE:
+                cost += 3.00;
+            default:
+                System.out.println("");
+        }
+        Double premiumToppingsCost = premiumToppings.getMeatPrice(size, 0) +
+                                                                   premiumToppings.getCheesePrice(size, 0);
+        cost += premiumToppingsCost;
+        return cost;
+  }
+
+    public void displayRegToppings() {
+        System.out.println("Regular Toppings: \n");
+        for (String toppings :  cheapToppings) {
+            System.out.println("- " +  toppings);
+        }
+    }
+
+    public void displayPremiumToppings(){
+        premiumToppings.displayMeat();
+        premiumToppings.displayCheese();
+    }
 
 }
