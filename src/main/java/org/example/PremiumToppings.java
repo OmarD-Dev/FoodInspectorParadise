@@ -12,6 +12,10 @@ public class PremiumToppings extends Toppings {
         initializeToppings();
     }
 
+    /*
+    NOTE: how will we implement extra meat and cheese in the order screen?
+    Maybe prompt for the method in the meat selection screen
+     */
     public double getMeatPrice(int size, int extraMeat) {
         double meatCost = 0.0;
         switch (size) {

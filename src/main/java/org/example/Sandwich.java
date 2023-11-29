@@ -1,8 +1,4 @@
-//TODO: add bread types and fill out totalCost method
-
 package org.example;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Sandwich {
 
@@ -13,22 +9,19 @@ public class Sandwich {
     private final int SMALL = 4;
     private final int MEDIUM = 8;
     private final int LARGE = 12;
-    private List<String> cheapToppings;
+    private CheapToppings cheapToppings;
     private PremiumToppings premiumToppings;
 
-     List<Sandwich> sandwichList = new ArrayList<>();
-
-
     public Sandwich() {
-    this.cheapToppings = new ArrayList<>();
-    this.premiumToppings = new PremiumToppings();
+        this.cheapToppings = new CheapToppings();
+        this.premiumToppings = new PremiumToppings();
     }
 
-    public Sandwich(int size, BreadType breadType, boolean toasted){
+    public Sandwich(int size, BreadType breadType, boolean toasted) {
         this.size = size;
         this.breadType = breadType;
         this.toasted = toasted;
-        this.cheapToppings = new ArrayList<>();
+        this.cheapToppings = new CheapToppings();
         this.premiumToppings = new PremiumToppings();
     }
 
@@ -52,25 +45,25 @@ public class Sandwich {
         return toasted;
     }
 
-     public void setToasted(boolean toasted) {
-     this.toasted = toasted;
-   }
-
-    public void addCheapTopping(String topping) {
-        this.cheapToppings.add(topping);
+    public void setToasted(boolean toasted) {
+        this.toasted = toasted;
     }
 
-    public void addMeat(String meat){
+    public void addCheapTopping(String topping) {
+        this.cheapToppings.addRegTopping(topping);
+    }
+
+    public void addMeat(String meat) {
         this.premiumToppings.addMeat(meat);
     }
 
-    public void addCheese(String cheese){
+    public void addCheese(String cheese) {
         this.premiumToppings.addCheese(cheese);
     }
 
-  public Double totalCost(){
-        cost = breadType.getCost();
-        switch (size){
+    public Double sandwichCost() {
+        cost = breadType.getBreadCost();
+        switch (size) {
             case SMALL:
                 cost += 0;
                 break;
@@ -83,19 +76,18 @@ public class Sandwich {
                 System.out.println("");
         }
         Double premiumToppingsCost = premiumToppings.getMeatPrice(size, 0) +
-                                                                   premiumToppings.getCheesePrice(size, 0);
+                premiumToppings.getCheesePrice(size, 0);
         cost += premiumToppingsCost;
         return cost;
-  }
-
-    public void displayRegToppings() {
-        System.out.println("Regular Toppings: \n");
-        for (String toppings :  cheapToppings) {
-            System.out.println("- " +  toppings);
-        }
     }
 
-    public void displayPremiumToppings(){
+    public void displayRegToppings() {
+        cheapToppings.displayRegToppings();
+        cheapToppings.displaySauces();
+        cheapToppings.displaySides();
+    }
+
+    public void displayPremiumToppings() {
         premiumToppings.displayMeat();
         premiumToppings.displayCheese();
     }

@@ -12,13 +12,15 @@ public class Order {
     public Order(){
         this.sandwiches= new ArrayList<>();
     }
+
     public void addSandwich(Sandwich s){
         sandwiches.add(s);
     }
+
     public double calculateTotal(){
         double total=0.00;
         for(Sandwich s: sandwiches){
-            total += s.totalCost();
+            total += s.sandwichCost();
         }
         return total;
     }

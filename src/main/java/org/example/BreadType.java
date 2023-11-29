@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Sandwich;
 
 public enum BreadType {
     WHITE(5.50),
@@ -12,7 +12,7 @@ public enum BreadType {
         this.cost = cost;
     }
 
-    public double getCost(){
+    public double getBreadCost(){
         return cost;
     }
 }
