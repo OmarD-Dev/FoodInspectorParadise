@@ -1,4 +1,4 @@
-package org.example;
+package org.example.screens;
 
 public class DrinksScreen {
     // the same as chips screen
