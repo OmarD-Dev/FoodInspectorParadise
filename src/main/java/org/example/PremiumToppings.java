@@ -3,17 +3,23 @@ package org.example;
 import java.util.ArrayList;
 
 public class PremiumToppings extends Toppings {
-    //price and name of the toppings
-    // we can add other methods later to make it more unique
 
-   private ArrayList<Toppings> meat ;
-   private ArrayList<Toppings> cheese ;
+   private ArrayList<String> meats ;
+   private ArrayList<String> cheeses ;
 
     public PremiumToppings(){
-       this.meat = new ArrayList<>();
-        this.cheese = new ArrayList<>();
+       this.meats = new ArrayList<>();
+        this.cheeses = new ArrayList<>();
+        initializeToppings();
     }
 
+public void  addPremiumMeat(String meat){
+        this.meats.add(meat);
+}
+
+    public void  addPremiumCheese(String cheese){
+        this.cheeses.add(cheese);
+    }
 
     public double getMeatPrice(int size, int extraMeat){
         double meatCost = 0.0;
@@ -25,69 +31,59 @@ public class PremiumToppings extends Toppings {
                 meatCost = 2.00;
                 break;
             case 12:
-                return 3.00;
+                meatCost =  3.00;
                 break;
             default:
-                System.out.println("Not a valid s");
+                System.out.println("Not a valid size.");
                 return  0.0;
         }
+        return meatCost + (extraMeat * 0.5);
     }
 
-    public Double addExtraMeat(int size){
+    public Double getCheesePrice(int size, int  extraCheese){
+        double cheeseCost = 0.0;
         switch(size){
             case 4:
-                return 0.50;
+                cheeseCost = 0.75;
+                break;
             case 8:
-                return 1.00;
+                cheeseCost = 1.00;
+                break;
             case 12:
-                return 1.50;
+                cheeseCost = 2.25;
+                break;
             default:
+                System.out.println("Not a valid size.");
                 return  0.0;
+        }
+        return cheeseCost+ (extraCheese * 0.30);
+    }
+
+    private void initializeToppings() {
+        meats.add("Steak");
+        meats.add("Ham");
+        meats.add("Salami");
+        meats.add("Roast Beef");
+        meats.add("Chicken");
+        meats.add("Bacon");
+
+        cheeses.add("American");
+        cheeses.add("Provolone");
+        cheeses.add("Cheddar");
+        cheeses.add("Swiss");
+    }
+
+    public void displayMeat() {
+        System.out.println("Meats: \n");
+        for (String meat : meats) {
+            System.out.println("- " + meat);
         }
     }
 
-    public Double getCheesePrice(int size){
-        switch(size){
-            case 4:
-                return 1.00;
-            case 8:
-                return 2.00;
-            case 12:
-                return 3.00;
-            default:
-                return  0.0;
+    public void displayCheese() {
+        System.out.println("Cheese: \n");
+        for (String cheese : cheeses) {
+            System.out.println("- " + cheeses);
         }
     }
-
-    public Double addExtraCheese(int size){
-        switch(size){
-            case 4:
-                return 0.50;
-            case 8:
-                return 1.00;
-            case 12:
-                return 1.50;
-            default:
-                return  0.0;
-        }
-    }
-    /*
-    Meats: steak, ham, salami, roast beef, chicken, bacon
-    4" 1.00
-    8" 2.00
-    12" 3.00
-    Extra meat 0.5, 1.00, 1.50
-
-    Cheese: american, provolone, cheddar, swiss
-    4" 0.75
-    8" 1.00
-    12" 2.25
-
-    Extra cheese 0.30, 0.60, 0.90
-
-     */
-
-
-
-
 }
