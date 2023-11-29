@@ -37,4 +37,8 @@ public class UserInput {
     public void closeScanner() {
         scanner.close();
     }
+
+    public void promptUser(String prompt){
+        System.out.println(prompt + "\n");
+    }
 }
