@@ -1,4 +1,4 @@
-package org.example;
+package org.example.screens;
 
 import org.example.screens.HomeScreen;
 import org.example.screens.OrderScreen;
