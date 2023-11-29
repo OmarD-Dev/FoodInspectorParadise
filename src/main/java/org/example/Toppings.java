@@ -1,7 +1,6 @@
 package org.example;
 
 public abstract class Toppings {
-    int price;
 
     public Toppings(){
 
