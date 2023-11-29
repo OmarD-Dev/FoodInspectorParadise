@@ -1,26 +1,25 @@
-package org.example;
+package org.example.screens;
 
 import org.example.utils.UserInput;
 
-public class OrderScreen {
+public class SandwichScreen {
 
-    private int[] menuOptions={0,1,2,3,4,};
-    private HomeScreen back;
-    private final UserInput userInput;
 
-    public OrderScreen(HomeScreen back){
+    private int[] menuOptions={0,1,2,3,4};
+    private OrderScreen back;
+    private UserInput userInput =  new UserInput();
+
+    public SandwichScreen(OrderScreen back){
         this.back=back;
-        this. userInput= new UserInput();
     }
 
     public void startOrderScreen(){
         System.out.println("""
                 Hello! What Would You Like to Order?
                 Please Enter One of The Following Options:
-                1) Add Sandwich
-                2) Add Drink
+                1) Add Bread
+                2) Add Toppings
                 3) Add Chips
-                4) Checkout
                 0) Cancel Order
                 """);
         System.out.print("\033[H\033[2J");
@@ -52,8 +51,13 @@ public class OrderScreen {
 
 
     }
-}
-    //build function
-    //await select function with the menu options
-    // has the property of  new homescreen and takes it in to initialize -- that way we can go back and not waste memory
 
+    public static class ChipsScreen {
+        // start with a build function
+        // takes in an orderscreen so that we can go back
+        /* we could also merge this with drinks screen and have them just print out the options with an associate number
+            then we can just match the number to whatever object it correlates to.
+
+         */
+    }
+}
