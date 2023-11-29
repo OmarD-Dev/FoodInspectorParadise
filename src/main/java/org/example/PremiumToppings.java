@@ -6,25 +6,29 @@ public class PremiumToppings extends Toppings {
     //price and name of the toppings
     // we can add other methods later to make it more unique
 
-    //String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
-   // String[] cheese = {"american", "provolone", "cheddar", "swiss"};
-    ArrayList<Toppings> meat = new ArrayList<>();
-    ArrayList<Toppings> cheese = new ArrayList<>();
+   private ArrayList<Toppings> meat ;
+   private ArrayList<Toppings> cheese ;
 
     public PremiumToppings(){
-
+       this.meat = new ArrayList<>();
+        this.cheese = new ArrayList<>();
     }
 
 
-    public Double getMeatPrice(int size){
-        switch(size){
+    public double getMeatPrice(int size, int extraMeat){
+        double meatCost = 0.0;
+        switch(size) {
             case 4:
-                return 1.00;
+                meatCost = 1.00;
+                break;
             case 8:
-                return 2.00;
+                meatCost = 2.00;
+                break;
             case 12:
                 return 3.00;
+                break;
             default:
+                System.out.println("Not a valid s");
                 return  0.0;
         }
     }
