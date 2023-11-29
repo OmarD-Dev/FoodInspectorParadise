@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 public class Sandwich {
 
+    private final int SMALL = 4;
+    private final int MEDIUM = 8;
+    private final int LARGE = 12;
     private int size;
     private Double cost;
      List<Sandwich> sandwichList = new ArrayList<>();
@@ -20,15 +23,17 @@ public class Sandwich {
     }
 
 
-
     /*
             parameterized constructor
             may include bread type
             or replace with a default constructor (no param)
              */
     public Sandwich(int size){
+
         this.size = size;
     }
+
+
 
 
     public int getSize() {
@@ -38,6 +43,8 @@ public class Sandwich {
     public void setSize(int size) {
         this.size = size;
     }
+
+
 
 
     public Double totalCost(){

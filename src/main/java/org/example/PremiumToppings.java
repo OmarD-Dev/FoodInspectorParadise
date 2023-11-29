@@ -8,8 +8,12 @@ public class PremiumToppings extends Toppings {
 
     //String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
    // String[] cheese = {"american", "provolone", "cheddar", "swiss"};
-     ArrayList<Toppings> meat = new ArrayList<>();
+    ArrayList<Toppings> meat = new ArrayList<>();
     ArrayList<Toppings> cheese = new ArrayList<>();
+
+    public PremiumToppings(){
+
+    }
 
 
     public Double getMeatPrice(int size){
@@ -26,6 +30,32 @@ public class PremiumToppings extends Toppings {
     }
 
     public Double addExtraMeat(int size){
+        switch(size){
+            case 4:
+                return 0.50;
+            case 8:
+                return 1.00;
+            case 12:
+                return 1.50;
+            default:
+                return  0.0;
+        }
+    }
+
+    public Double getCheesePrice(int size){
+        switch(size){
+            case 4:
+                return 1.00;
+            case 8:
+                return 2.00;
+            case 12:
+                return 3.00;
+            default:
+                return  0.0;
+        }
+    }
+
+    public Double addExtraCheese(int size){
         switch(size){
             case 4:
                 return 0.50;
