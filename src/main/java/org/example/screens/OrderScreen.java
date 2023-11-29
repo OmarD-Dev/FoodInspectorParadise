@@ -1,11 +1,12 @@
 package org.example.screens;
 
 
+import org.example.Order;
 import org.example.utils.ScreenDisplay;
 import org.example.utils.UserInput;
 
 public class OrderScreen {
-
+    private Order order;
     private int[] menuOptions={0,1,2,3,4};
     private HomeScreen back;
     private UserInput userInput;
@@ -26,7 +27,7 @@ public class OrderScreen {
         switch (option){
             case 1:
                 System.out.println("Let's build that sandwich!");
-                SandwichScreen ss = new SandwichScreen(this,userInput);
+                SandwichScreen ss = new SandwichScreen(this,userInput, order);
                 ss.startSandwichScreen();
                 break;
             case 2:

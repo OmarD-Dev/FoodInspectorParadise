@@ -6,17 +6,18 @@ import java.util.List;
 
 public class Sandwich {
 
+    //make size an enum
     private int size;
     private Double cost;
     private boolean toasted;
     private BreadType breadType;
+    //static constants
     private final int SMALL = 4;
     private final int MEDIUM = 8;
     private final int LARGE = 12;
+    //change cheapToppings
     private List<String> cheapToppings;
     private PremiumToppings premiumToppings;
-
-     List<Sandwich> sandwichList = new ArrayList<>();
 
 
     public Sandwich() {

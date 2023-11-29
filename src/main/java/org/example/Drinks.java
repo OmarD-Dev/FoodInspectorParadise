@@ -1,6 +1,6 @@
 package org.example;
 
-public enum Drinks { COKE, PEPSI, FANTA, SPRITE,MTNDEW,DRPEPPER;
+public enum Drinks { COKE, PEPSI, FANTA, SPRITE,MTN_DEW,DR_PEPPER;
     //enums of size and flavor
     public static final int SMALL = 1;
     public static final int MEDIUM = 2;
