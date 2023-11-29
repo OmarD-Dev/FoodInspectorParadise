@@ -31,4 +31,11 @@ public class ScreenDisplay {
                 3) Would you like your sandwich toasted?
                 """);
     }
+    public static void displayCheckoutScreen() {
+        System.out.println("""
+                Here's your order:
+                1)Confirm
+                2)Cancel
+                """);
+    }
 }
