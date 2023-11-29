@@ -1,11 +1,16 @@
 package org.example;
 
-public class PremiumToppings {
+import java.util.ArrayList;
+
+public class PremiumToppings extends Toppings {
     //price and name of the toppings
     // we can add other methods later to make it more unique
 
-    String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
-    String[] cheese = {"american", "provolone", "cheddar", "swiss"};
+    //String[] meat = {"steak", "ham","salami", "roast beef", "chicken", "bacon"};
+   // String[] cheese = {"american", "provolone", "cheddar", "swiss"};
+     ArrayList<Toppings> meat = new ArrayList<>();
+    ArrayList<Toppings> cheese = new ArrayList<>();
+
 
     public Double getMeatPrice(int size){
         switch(size){
