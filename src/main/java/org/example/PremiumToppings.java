@@ -3,7 +3,6 @@ package org.example;
 import java.util.ArrayList;
 
 public class PremiumToppings extends Toppings {
-
     private ArrayList<String> meats;
     private ArrayList<String> cheeses;
 
@@ -12,7 +11,6 @@ public class PremiumToppings extends Toppings {
         this.cheeses = new ArrayList<>();
         initializeToppings();
     }
-
 
     public double getMeatPrice(int size, int extraMeat) {
         double meatCost = 0.0;
@@ -73,7 +71,6 @@ public class PremiumToppings extends Toppings {
     public void addCheese(String cheese) {
         this.cheeses.add(cheese);
     }
-
 
     public void displayMeat() {
         System.out.println("Meats: \n");
