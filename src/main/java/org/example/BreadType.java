@@ -12,7 +12,7 @@ public enum BreadType {
         this.cost = cost;
     }
 
-    public double getCost(){
+    public double getBreadCost(){
         return cost;
     }
 }
