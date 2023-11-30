@@ -2,15 +2,10 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class PremiumToppings extends Toppings {
-    private ArrayList<String> meats;
-    private ArrayList<String> cheeses;
+public class PremiumToppings implements EdibleItem {
+    private ArrayList<String> meats = new ArrayList<>();;
+    private ArrayList<String> cheeses = new ArrayList<>();
 
-    public PremiumToppings() {
-        this.meats = new ArrayList<>();
-        this.cheeses = new ArrayList<>();
-        initializeToppings();
-    }
 
     /*
     NOTE: how will we implement extra meat and cheese in the order screen?
@@ -54,20 +49,6 @@ public class PremiumToppings extends Toppings {
         return cheeseCost + (extraCheese * 0.30);
     }
 
-    private void initializeToppings() {
-        meats.add("Steak");
-        meats.add("Ham");
-        meats.add("Salami");
-        meats.add("Roast Beef");
-        meats.add("Chicken");
-        meats.add("Bacon");
-
-        cheeses.add("American");
-        cheeses.add("Provolone");
-        cheeses.add("Cheddar");
-        cheeses.add("Swiss");
-    }
-
     public void addMeat(String meat) {
         this.meats.add(meat);
     }
@@ -75,6 +56,7 @@ public class PremiumToppings extends Toppings {
     public void addCheese(String cheese) {
         this.cheeses.add(cheese);
     }
+
 
 
     public void displayMeat() {
@@ -86,27 +68,11 @@ public class PremiumToppings extends Toppings {
         }
     }
 
-    public String getMeat(int counter) {
-        if (counter > 0 && counter <= meats.size()) {
-            return meats.get(counter - 1);
-        } else {
-            return null;
-        }
-    }
-
-    public String getCheese(int counter) {
-        if (counter > 0 && counter <= cheeses.size()) {
-            return cheeses.get(counter - 1);
-        } else {
-            return null;
-        }
-    }
-
     public void displayCheese() {
         System.out.println("Cheese: \n");
         int counter = 1;
         for (String cheese : cheeses) {
-            System.out.println(counter +". " + cheeses);
+            System.out.println(counter +". " + cheese);
             counter++;
         }
     }
