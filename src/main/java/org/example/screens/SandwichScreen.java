@@ -19,7 +19,7 @@ public class SandwichScreen {
         this.sandwich = new Sandwich();
         this.order = order;
     }
-  
+
     public void startSandwichScreen() {
         System.out.println("""
                 What bread would you like?
@@ -63,11 +63,11 @@ public class SandwichScreen {
 
     public void getBreadSize() {
         userInput.promptUser("""
-        Pick a size: 
-        1. 4 in. 
-        2. 8 in. 
-        3. 12 in.
-        """);
+                Pick a size: 
+                1. 4 in. 
+                2. 8 in. 
+                3. 12 in.
+                """);
         int option = userInput.getMenuOption(menuOptions);
         switch (option) {
             case 1:
@@ -84,58 +84,6 @@ public class SandwichScreen {
                 break;
         }
     }
-
-    public void addToppings() {
-
-    public void addToppingsPH() {
-        userInput.promptUser("""
-                Pick a meat option:
-                1. Steak
-                2. Ham
-                3. Salami
-                4. Roast Beef
-                5. Chicken
-                6. Bacon
-                7. No meat
-                """);
-        int option = userInput.getMenuOption(menuOptions);
-        switch (option) {
-            case 1:
-                sandwich.addMeat("Steak");
-                order.addOrderItem(sandwich);
-                back.startOrderScreen();
-                break;
-            case 2:
-                sandwich.addMeat("Ham");
-                System.out.println("+ Added Ham\n");
-                break;
-            case 3:
-                sandwich.addMeat("Salami");
-                System.out.println("+ Added Salami\n");
-                break;
-            case 4:
-                sandwich.addMeat("Roast Beef");
-                System.out.println("+ Added Roast Beef\n");
-                break;
-            case 5:
-                sandwich.addMeat("Chicken");
-                System.out.println("+ Added Chicken\n");
-                break;
-            case 6:
-                sandwich.addMeat("Bacon");
-                System.out.println("+ Added Bacon\n");
-                break;
-            case 7:
-                System.out.println("No meat was added\n");
-                break;
-
-            default:
-                System.out.println("Sorry, that is not a valid option.");
-                break;
-        }
-    }
-
-}
 
     public void customizeSandwich() {
         boolean continueCustomizing = true;
@@ -156,7 +104,7 @@ public class SandwichScreen {
                     //removeToppings();
                     break;
                 case 3:
-                    //toastSandwich();
+                    toastSandwich();
                     break;
                 case 4:
                     continueCustomizing = false;
@@ -167,7 +115,6 @@ public class SandwichScreen {
                     System.out.println("Invalid option. Please try again.");
                     break;
             }
-
         }
     }
 
@@ -190,13 +137,13 @@ public class SandwichScreen {
                     addMeats();
                     break;
                 case 2:
-                    //addCheeses();
+                    addCheese();
                     break;
                 case 3:
-                    //addOtherToppings();
+                    addOtherToppings();
                     break;
                 case 4:
-                    //addSauces();
+                    addSauces();
                     break;
                 case 5:
                     continueAddingToppings = false;
@@ -208,16 +155,21 @@ public class SandwichScreen {
         }
     }
 
-    public void removeToppings() {
-        System.out.println("Remove Toppings");
-            /* Display toppings of sandwich - either with sandwich.displayTopping method
-            or a new display method that takes in the sandwich gettoppings getter call.
-            */
+    public void toastSandwich(){
+        System.out.print("\nWould you like to toast your sandwich? \n 1. Yes 2. No: ");
+        int toastChoice = userInput.getMenuOption(menuOptions);
+        if(toastChoice == 1){
+            sandwich.setToasted(true);
+            System.out.println("Your sandwich will be toasted.\n");
+        }
+        else{
+            sandwich.setToasted(false);
+            System.out.println("We will not toast your sandwich.\n");
+        }
     }
-    //public void toastSandwich(){}
 
     public void addMeats() {
-        System.out.println("Add Meats:");
+        System.out.println("\nAdd Meats: ");
         premiumToppings.displayMeat();
         int meatOption = userInput.getMenuOption(menuOptions);
         String selectedMeat = premiumToppings.getMeat(meatOption);
@@ -233,16 +185,73 @@ public class SandwichScreen {
             System.out.println("Invalid meat option. Please choose again");
             addMeats();
         }
-
-
     }
 
     private boolean askForExtraTopping(String topping) {
-        System.out.println(" Do you want extra " + topping + "? 1. Yes 2. No");
+        System.out.println("Do you want extra " + topping + "? 1. Yes 2. No");
         int extraChoice = userInput.getMenuOption(new int[]{1, 2});
         if (extraChoice == 1) {
             return true;
         }
         return false;
     }
+
+    public void addCheese(){
+        System.out.println("\nAdd Cheese:");
+        premiumToppings.displayCheese();
+        int cheeseOption = userInput.getMenuOption(menuOptions);
+        String selectedCheese = premiumToppings.getCheese(cheeseOption);
+        if (selectedCheese != null && sandwich.getCheeseCounter() < 3) {
+            System.out.println("You selected: " + selectedCheese);
+            sandwich.addCheese(selectedCheese);
+            if (askForExtraTopping(selectedCheese)) {
+                sandwich.addCheese(selectedCheese);
+            }
+        } else if (sandwich.getCheeseCounter() >= 3) {
+            System.out.println("That's too much cheese.");
+        } else {
+            System.out.println("Invalid Cheese option. Please choose again");
+            addCheese();
+        }
+    }
+
+    public void addOtherToppings(){
+        System.out.println("\nAdd Other Toppings:");
+        cheapToppings.displayRegToppings();
+        int toppingOption = userInput.getMenuOption(menuOptions);
+        String selectedTopping = cheapToppings.getRegTopping(toppingOption);
+        if (selectedTopping != null && sandwich.getRegToppingCounter() < 3) {
+            System.out.println("You selected: " + selectedTopping);
+            sandwich.addCheapTopping(selectedTopping);
+            if (askForExtraTopping(selectedTopping)) {
+                sandwich.addCheapTopping(selectedTopping);
+            }
+        } else if (sandwich.getCheeseCounter() >= 3) {
+            System.out.println("That's too much cheese.");
+        } else {
+            System.out.println("Invalid Cheese option. Please choose again");
+            addCheese();
+        }
+    }
+
+    public void addSauces(){
+        System.out.println("\nAdd sauce: ");
+        cheapToppings.displaySauces();
+        int sauceOption = userInput.getMenuOption(menuOptions);
+        String selectedSauce = cheapToppings.getSauces(sauceOption);
+        if(selectedSauce !=null && sandwich.getSauceCounter() < 3){
+            System.out.println("You selected " + selectedSauce);
+            sandwich.addCheapTopping(selectedSauce);
+            if(askForExtraTopping(selectedSauce)){
+                sandwich.addCheapTopping(selectedSauce);
+            }
+        }else if(sandwich.getSauceCounter() >= 3){
+            System.out.println("That's too much sauce.");
+        }else{
+            System.out.println("Invalid sauce option. Please choose again.");
+            addSauces();
+        }
+    }
+
+
 }

@@ -76,6 +76,7 @@ public class PremiumToppings extends Toppings {
         this.cheeses.add(cheese);
     }
 
+
     public void displayMeat() {
         System.out.println("Meats: \n");
         int counter=1;
@@ -84,9 +85,18 @@ public class PremiumToppings extends Toppings {
             counter++;
         }
     }
+
     public String getMeat(int counter) {
         if (counter > 0 && counter <= meats.size()) {
             return meats.get(counter - 1);
+        } else {
+            return null;
+        }
+    }
+
+    public String getCheese(int counter) {
+        if (counter > 0 && counter <= cheeses.size()) {
+            return cheeses.get(counter - 1);
         } else {
             return null;
         }

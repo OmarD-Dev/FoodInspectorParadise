@@ -23,9 +23,10 @@ public class Drinks implements EdibleItem{
     NOTE: how will add flavor relate to the order screen?
                 might need to come back to this method
      */
-    public void addDrink(String flavor, DrinkSize size) {
-        this.drinkType.add(flavor);
-    }
+//    public void addDrink(String flavor, DrinkSize size) {
+  //      this.drinkType.add(flavor);
+ //   }
+
     public String getDrink(int index) {
         if (index >= 0 && index < drinkType.size()) {
             return drinkType.get(index);
