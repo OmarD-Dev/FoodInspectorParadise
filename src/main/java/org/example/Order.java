@@ -34,11 +34,10 @@ public class Order {
     }
 
 
-
     @Override
     public String toString() {
-        return "";
-        // this turns the entire order to a string to either be printed or be put into the csv
-
+        return "Order{" +
+                "orderItems=" + orderItems +
+                '}';
     }
 }

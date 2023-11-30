@@ -12,6 +12,9 @@ public class Sandwich implements EdibleItem{
     private final int MEDIUM = 8;
     private final int LARGE = 12;
 
+    private int meatCounter = 0;
+    private int cheeseCounter = 0;
+
 
 
     private CheapToppings cheapToppings;
@@ -58,8 +61,13 @@ public class Sandwich implements EdibleItem{
         this.cheapToppings.addRegTopping(topping);
     }
 
+    public int getMeatCounter() {
+        return meatCounter;
+    }
+
     public void addMeat(String meat) {
         this.premiumToppings.addMeat(meat);
+        this.meatCounter++;
     }
 
     public void addCheese(String cheese) {
