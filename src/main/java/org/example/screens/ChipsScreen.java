@@ -19,17 +19,18 @@ public class ChipsScreen {
         this.order=order;
         this.userInput=userInput;
     }
+
     public void startChipsScreen(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
         ScreenDisplay.displayChipsScreen();
-        this.awaitSelect();
+        //this.awaitSelect();
     }
-    public void awaitSelect() {
+   /* public void awaitSelect() {
         int option = userInput.getMenuOption(menuOptions);
         switch (option) {
             case 0:
-                order.addOrderItem();
+                order.addOrderItem(c);
                 // I'm not tryna figure out the enums rn its frying my brain so I'm goint o just do the drinks class first
                 break;
             case 1:
@@ -52,5 +53,7 @@ public class ChipsScreen {
     }
     // the same as chips screen
     // can be merged according to the idea I put in chipsScreen
+
+    */
 }
 

@@ -50,22 +50,49 @@ public class CheapToppings extends Toppings {
 
     public void displayRegToppings() {
         System.out.println("Regular Toppings: \n");
+        int counter = 1;
         for (String toppings :  regToppings) {
-            System.out.println("- " +  toppings);
+            System.out.println(counter + ". " +  toppings);
+            counter++;
+        }
+    }
+    public String getRegTopping(int counter) {
+        if (counter > 0 && counter <= regToppings.size()) {
+            return regToppings.get(counter - 1);
+        } else {
+            return null;
         }
     }
 
     public void displaySauces() {
         System.out.println("Sauces: \n");
+        int counter = 1;
         for (String sauce : sauces) {
-            System.out.println("- " +  sauce);
+            System.out.println( counter + ". " +  sauce);
+            counter++;
+        }
+    }
+    public String getSauces(int counter) {
+        if (counter > 0 && counter <= sauces.size()) {
+            return sauces.get(counter - 1);
+        } else {
+            return null;
         }
     }
 
     public void displaySides() {
         System.out.println("Sides: \n");
+        int counter =1;
         for (String side : sides) {
-            System.out.println("- " +  side);
+            System.out.println(counter +". " +  side);
+            counter++;
+        }
+    }
+    public String getSides(int counter) {
+        if (counter > 0 && counter <= sides.size()) {
+            return sides.get(counter - 1);
+        } else {
+            return null;
         }
     }
 
