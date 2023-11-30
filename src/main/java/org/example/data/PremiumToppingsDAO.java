@@ -56,7 +56,7 @@ public class PremiumToppingsDAO {
         System.out.println("Cheese: \n");
         int counter = 1;
         for (String cheese : cheeses) {
-            System.out.println(counter +". " + cheeses);
+            System.out.println(counter +". " + cheese);
             counter++;
         }
     }
