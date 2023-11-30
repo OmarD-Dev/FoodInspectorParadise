@@ -89,4 +89,9 @@ public class PremiumToppings extends Toppings {
             System.out.println("- " + cheeses);
         }
     }
+
+    @Override
+    public double getCost() {
+        return 0;
+    }
 }

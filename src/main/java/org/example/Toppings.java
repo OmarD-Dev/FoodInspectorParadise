@@ -1,6 +1,6 @@
 package org.example;
 
-public abstract class Toppings {
+public abstract class Toppings implements EdibleItem {
 
     public Toppings(){
 

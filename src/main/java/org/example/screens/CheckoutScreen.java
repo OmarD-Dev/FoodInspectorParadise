@@ -1,18 +1,22 @@
 package org.example.screens;
 
+import org.example.Order;
+import org.example.Receipt;
 import org.example.screens.HomeScreen;
 import org.example.screens.OrderScreen;
 import org.example.utils.ScreenDisplay;
 import org.example.utils.UserInput;
 
 public class CheckoutScreen {
+    private Order order;
     private int[]menuOptions= {0,1};
     private HomeScreen back;
     private UserInput userInput;
 
-    public CheckoutScreen(HomeScreen back, UserInput userInput){
+    public CheckoutScreen(HomeScreen back, UserInput userInput, Order order){
         this.back=back;
         this.userInput=userInput;
+        this.order= order;
     }
 
     public void startCheckoutScreen(){
@@ -27,7 +31,7 @@ public class CheckoutScreen {
         switch (option) {
             case 1:
                 System.out.println("Order Confirmed");
-
+                Receipt.generateReceipt(order);
                 break;
             case 2:
                 System.out.println("Order Cancelled");

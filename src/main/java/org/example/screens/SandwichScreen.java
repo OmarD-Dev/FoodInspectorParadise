@@ -6,6 +6,7 @@ import org.example.Sandwich;
 import org.example.utils.UserInput;
 
 public class SandwichScreen {
+
     private Order order;
     Sandwich sandwich;
     private int[] menuOptions = {0, 1, 2, 3, 4};
@@ -13,10 +14,10 @@ public class SandwichScreen {
     private UserInput userInput;
 
     public SandwichScreen(OrderScreen back, UserInput userInput, Order order ) {
-        this.order= order;
         this.back = back;
         this.userInput = userInput;
         this.sandwich= new Sandwich();
+        this.order=order;
     }
 
     public void startSandwichScreen() {
@@ -90,7 +91,7 @@ public class SandwichScreen {
         switch (option) {
             case 1:
                 sandwich.addMeat("Steak");
-                order.addSandwich(sandwich);
+                order.addOrderItem(sandwich);
                 back.startOrderScreen();
                 break;
             case 2:

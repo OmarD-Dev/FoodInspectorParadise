@@ -1,26 +1,34 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
-    ArrayList<Sandwich> sandwiches ; // all the sandwiches in the oder... we can do this for the other stuff too later
-    //ArrayList<Drinks> drinks = new ArrayList<>();
+    List<EdibleItem>orderItems;
+    //edibleItem interface(){
+    // getPrice()}
+
+    //list<Edibleitems> add drinks, chips, sandwiches
+    //add item
+    //remove item
 
 
-    //ArrayList<Chips> chips = new ArrayList<>();
-
-    public Order(){
-        this.sandwiches= new ArrayList<>();
+    public List<EdibleItem> getOrderItems() {
+        return orderItems;
     }
 
-    public void addSandwich(Sandwich s){
-        sandwiches.add(s);
+    public Order(){
+        this.orderItems= new ArrayList<>();
+    }
+
+    public void addOrderItem(EdibleItem edible){
+        orderItems.add(edible);
     }
 
     public double calculateTotal(){
         double total=0.00;
-        for(Sandwich s: sandwiches){
-            total += s.sandwichCost();
+        for(EdibleItem i: orderItems){
+            total += i.getCost();
         }
         return total;
     }
