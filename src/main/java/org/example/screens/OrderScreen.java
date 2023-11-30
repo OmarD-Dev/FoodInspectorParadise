@@ -14,6 +14,7 @@ public class OrderScreen {
     public OrderScreen(HomeScreen back,UserInput userInput){
         this.back=back;
         this.userInput= userInput;
+        this.order= new Order();
     }
 
     public void startOrderScreen(){
@@ -42,7 +43,7 @@ public class OrderScreen {
                 break;
             case 4:
                 System.out.println("Show me the money!");
-                CheckoutScreen cos = new CheckoutScreen(back,userInput);
+                CheckoutScreen cos = new CheckoutScreen(back,userInput,order);
                 cos.startCheckoutScreen();
                 break;
             case 5:

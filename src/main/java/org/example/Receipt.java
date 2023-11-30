@@ -1,4 +1,5 @@
-package org.example.Receipts;
+package org.example;
+import org.example.EdibleItem;
 import org.example.Order;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -12,9 +13,10 @@ public class Receipt {
         String filename= timestamp +".txt";
         try(BufferedWriter writer= new BufferedWriter(new FileWriter(filename))){
             writer.write("Order Details:\n");
-        /* loop through order and write out each item to list with price
-        another write statement to show total price at bottom
-        */
+            for(EdibleItem i : order.getOrderItems()){
+                writer.write(i.toString()+"- $" + i.getCost() + "\n");
+            }
+            writer.write("Total: $" + order.calculateTotal());
         }catch (IOException e){
             e.printStackTrace();
         }

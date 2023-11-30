@@ -1,6 +1,6 @@
 package org.example;
 
-public class Sandwich {
+public class Sandwich implements EdibleItem{
 
     //make size an enum
     private int size;
@@ -97,4 +97,8 @@ public class Sandwich {
         premiumToppings.displayCheese();
     }
 
+    @Override
+    public double getCost() {
+        return 0;
+    }
 }

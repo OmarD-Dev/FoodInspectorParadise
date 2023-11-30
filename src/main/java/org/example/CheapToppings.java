@@ -69,4 +69,8 @@ public class CheapToppings extends Toppings {
         }
     }
 
+    @Override
+    public double getCost() {
+        return 0;
+    }
 }
