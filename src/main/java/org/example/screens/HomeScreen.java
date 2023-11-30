@@ -9,7 +9,7 @@ public class HomeScreen {
     private UserInput userInput;
 
     public void startHomeScreen(UserInput userInput) {
-        this.userInput =userInput;
+        this.userInput = userInput;
         ScreenDisplay.displayHomeScreen();
         this.awaitSelect();
     }
@@ -27,6 +27,7 @@ public class HomeScreen {
                 break;
             default:
                 System.out.println("Something went wrong, please try again.");
+                 System.exit(0);
                 break;
         }
     }

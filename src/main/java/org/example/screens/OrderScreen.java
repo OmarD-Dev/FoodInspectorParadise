@@ -33,13 +33,13 @@ public class OrderScreen {
                 break;
             case 2:
                 System.out.println("Time to Get Our Drink On");
-                //DrinksScreen ds = new DrinksScreen(this,userInput);
-                //ds.startDrinksScreen();
+                DrinksScreen ds = new DrinksScreen(this,userInput, order);
+                ds.startDrinksScreen();
                 break;
             case 3:
                 System.out.println("Get your chips here");
-                //ChipsScreen cs = new ChipsScreen(this,userInput);
-               // cs.startChipsScreen();
+                ChipsScreen cs = new ChipsScreen(this,userInput, order);
+                cs.startChipsScreen();
                 break;
             case 4:
                 System.out.println("Show me the money!");

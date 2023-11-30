@@ -19,21 +19,21 @@ public class SandwichScreen {
         this.sandwich = new Sandwich();
         this.order = order;
     }
-
+  
     public void startSandwichScreen() {
         System.out.println("""
                 What bread would you like?
-                1.Wheat
-                2.White
-                3.rye
-                4.wrap
+                1. Wheat
+                2. White
+                3. Rye
+                4. Wrap
                  """);
         System.out.print("\033[H\033[2J");
         System.out.flush();
         this.awaitSelect();
         this.getBreadSize();
+        this.addToppings();
         this.customizeSandwich();
-
     }
 
     public void awaitSelect() {
@@ -41,15 +41,19 @@ public class SandwichScreen {
         switch (option) {
             case 1:
                 sandwich.setBreadType(BreadType.WHEAT);
+                System.out.println("Wheat was selected\n");
                 break;
             case 2:
                 sandwich.setBreadType(BreadType.WHITE);
+                System.out.println("White was selected\n");
                 break;
             case 3:
                 sandwich.setBreadType(BreadType.RYE);
+                System.out.println("Rye was selected\n");
                 break;
             case 4:
                 sandwich.setBreadType(BreadType.WRAP);
+                System.out.println("Wrap was selected\n");
                 break;
             default:
                 System.out.println("Something went wrong, please try again.");
@@ -58,7 +62,12 @@ public class SandwichScreen {
     }
 
     public void getBreadSize() {
-        userInput.promptUser("Pick a size: 1) 4 in. 2) 8 in. 3)12 in");
+        userInput.promptUser("""
+        Pick a size: 
+        1. 4 in. 
+        2. 8 in. 
+        3. 12 in.
+        """);
         int option = userInput.getMenuOption(menuOptions);
         switch (option) {
             case 1:
@@ -76,6 +85,8 @@ public class SandwichScreen {
         }
     }
 
+    public void addToppings() {
+
     public void addToppingsPH() {
         userInput.promptUser("""
                 Pick a meat option:
@@ -86,8 +97,6 @@ public class SandwichScreen {
                 5. Chicken
                 6. Bacon
                 7. No meat
-                                
-                                
                 """);
         int option = userInput.getMenuOption(menuOptions);
         switch (option) {
@@ -98,21 +107,26 @@ public class SandwichScreen {
                 break;
             case 2:
                 sandwich.addMeat("Ham");
+                System.out.println("+ Added Ham\n");
                 break;
             case 3:
                 sandwich.addMeat("Salami");
+                System.out.println("+ Added Salami\n");
                 break;
             case 4:
                 sandwich.addMeat("Roast Beef");
+                System.out.println("+ Added Roast Beef\n");
                 break;
             case 5:
                 sandwich.addMeat("Chicken");
+                System.out.println("+ Added Chicken\n");
                 break;
             case 6:
                 sandwich.addMeat("Bacon");
+                System.out.println("+ Added Bacon\n");
                 break;
             case 7:
-
+                System.out.println("No meat was added\n");
                 break;
 
             default:
@@ -120,6 +134,8 @@ public class SandwichScreen {
                 break;
         }
     }
+
+}
 
     public void customizeSandwich() {
         boolean continueCustomizing = true;

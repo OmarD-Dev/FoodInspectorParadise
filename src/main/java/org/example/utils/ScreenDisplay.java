@@ -1,5 +1,7 @@
 package org.example.utils;
 
+import org.example.ChipFlavors;
+
 public class ScreenDisplay {
     public static void displayHomeScreen() {
         System.out.println("""
@@ -34,8 +36,26 @@ public class ScreenDisplay {
     public static void displayCheckoutScreen() {
         System.out.println("""
                 Here's your order:
-                1)Confirm
-                2)Cancel
+                1) Confirm
+                2) Cancel
                 """);
+    }
+    public static void displayDrinksScreen() {
+        System.out.println("""
+                Pick a drink option:
+                1. Coca-Cola
+                2. Pepsi
+                3. Fanta
+                4. Sprite
+                5. Mountain Dew
+                6. Dr. Pepper
+                7. No Drink
+                """);
+    }
+    public static void displayChipsScreen() {
+        System.out.println("Here's our Chips");
+        for(ChipFlavors flavor:ChipFlavors.values()){
+            System.out.println(flavor.getInt()+") "+flavor.getName());
+        }
     }
 }
