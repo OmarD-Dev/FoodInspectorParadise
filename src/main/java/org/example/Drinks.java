@@ -26,9 +26,16 @@ public class Drinks implements EdibleItem{
     public void addDrink(String flavor, DrinkSize size) {
         this.drinkType.add(flavor);
     }
+    public String getDrink(int index) {
+        if (index >= 0 && index < drinkType.size()) {
+            return drinkType.get(index);
+        } else {
+            return null;
+        }
+    }
 
     @Override
     public double getCost() {
-        return 0;
+        return 2.50;
     }
 }
