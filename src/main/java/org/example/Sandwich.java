@@ -2,13 +2,18 @@ package org.example;
 
 public class Sandwich {
 
+    //make size an enum
     private int size;
     private Double cost;
     private boolean toasted;
     private BreadType breadType;
+    //static constants
     private final int SMALL = 4;
     private final int MEDIUM = 8;
     private final int LARGE = 12;
+
+
+
     private CheapToppings cheapToppings;
     private PremiumToppings premiumToppings;
 

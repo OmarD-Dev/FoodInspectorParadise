@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-
-//comment
 public class Drinks {
     private ArrayList<String> drinkType;
 
