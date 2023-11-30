@@ -1,6 +1,6 @@
 package org.example;
 
-public enum ChipFlavors {
+public enum ChipFlavor {
     LAYS(1,"Lays"),
     DORITOS(2,"Doritos"),
     CHEETOS(3,"Cheetos"),
@@ -8,7 +8,7 @@ public enum ChipFlavors {
 
     private int flavor;
     private String name;
-    ChipFlavors(int flavor, String name){
+    ChipFlavor(int flavor, String name){
         this.flavor=flavor;
         this.name=name;
     }

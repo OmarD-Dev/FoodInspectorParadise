@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class Drinks implements EdibleItem{
+public class Drinks implements PriceableItem {
     private ArrayList<String> drinkType;
 
     public Drinks() {
@@ -36,7 +36,7 @@ public class Drinks implements EdibleItem{
     }
 
     @Override
-    public double getCost() {
+    public double getPrice() {
         return 2.50;
     }
 }

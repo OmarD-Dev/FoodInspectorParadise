@@ -19,9 +19,11 @@ public class UserInput {
             isValid= isValidOption(option,menuOptions);
         }catch (InputMismatchException e){
             System.out.println("Invalid input. Please enter an available option.");
+        }finally {
             scanner.nextLine();
         }
     }
+
     return option;
     }
     public boolean isValidOption(int userOption, int []menuOptions ){

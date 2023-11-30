@@ -1,6 +1,6 @@
 package org.example.utils;
 
-import org.example.ChipFlavors;
+import org.example.ChipFlavor;
 
 public class ScreenDisplay {
     public static void displayHomeScreen() {
@@ -54,7 +54,7 @@ public class ScreenDisplay {
     }
     public static void displayChipsScreen() {
         System.out.println("Here's our Chips");
-        for(ChipFlavors flavor:ChipFlavors.values()){
+        for(ChipFlavor flavor: ChipFlavor.values()){
             System.out.println(flavor.getInt()+") "+flavor.getName());
         }
     }

@@ -1,6 +1,4 @@
 package org.example;
-import org.example.EdibleItem;
-import org.example.Order;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,8 +11,8 @@ public class Receipt {
         String filename= timestamp +".txt";
         try(BufferedWriter writer= new BufferedWriter(new FileWriter(filename))){
             writer.write("Order Details:\n");
-            for(EdibleItem i : order.getOrderItems()){
-                writer.write(i.toString()+"- $" + i.getCost() + "\n");
+            for(PriceableItem i : order.getOrderItems()){
+                writer.write(i.toString()+"- $" + i.getPrice() + "\n");
             }
             writer.write("Total: $" + order.calculateTotal());
         }catch (IOException e){
