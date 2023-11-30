@@ -78,15 +78,26 @@ public class PremiumToppings extends Toppings {
 
     public void displayMeat() {
         System.out.println("Meats: \n");
+        int counter=1;
         for (String meat : meats) {
-            System.out.println("- " + meat);
+            System.out.println(counter +". " + meat);
+            counter++;
+        }
+    }
+    public String getMeat(int counter) {
+        if (counter > 0 && counter <= meats.size()) {
+            return meats.get(counter - 1);
+        } else {
+            return null;
         }
     }
 
     public void displayCheese() {
         System.out.println("Cheese: \n");
+        int counter = 1;
         for (String cheese : cheeses) {
-            System.out.println("- " + cheeses);
+            System.out.println(counter +". " + cheeses);
+            counter++;
         }
     }
 
