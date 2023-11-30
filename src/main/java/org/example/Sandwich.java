@@ -17,11 +17,11 @@ public class Sandwich implements EdibleItem{
     private int regToppingCounter=0;
     private int sauceCounter= 0;
 
-    private CheapToppings cheapToppings;
+    private RegularToppings regularToppings;
     private PremiumToppings premiumToppings;
 
     public Sandwich() {
-        this.cheapToppings = new CheapToppings();
+        this.regularToppings = new RegularToppings();
         this.premiumToppings = new PremiumToppings();
     }
 
@@ -29,7 +29,7 @@ public class Sandwich implements EdibleItem{
         this.size = size;
         this.breadType = breadType;
         this.toasted = toasted;
-        this.cheapToppings = new CheapToppings();
+        this.regularToppings = new RegularToppings();
         this.premiumToppings = new PremiumToppings();
     }
 
@@ -58,7 +58,7 @@ public class Sandwich implements EdibleItem{
     }
 
     public void addCheapTopping(String topping) {
-        this.cheapToppings.addRegTopping(topping);
+        this.regularToppings.addRegTopping(topping);
         regToppingCounter++;
     }
 
@@ -82,7 +82,7 @@ public class Sandwich implements EdibleItem{
         this.meatCounter++;
     }
     public void addSauce(String sauce) {
-        this.cheapToppings.addSauce(sauce);
+        this.regularToppings.addSauce(sauce);
         this.sauceCounter++;
     }
 
@@ -90,6 +90,7 @@ public class Sandwich implements EdibleItem{
         this.premiumToppings.addCheese(cheese);
         this.cheeseCounter++;
     }
+
 
     public Double sandwichCost() {
         cost = breadType.getBreadCost();
@@ -112,9 +113,9 @@ public class Sandwich implements EdibleItem{
     }
 
     public void displayRegularToppings() {
-        cheapToppings.displayRegToppings();
-        cheapToppings.displaySauces();
-        cheapToppings.displaySides();
+        regularToppings.displayRegToppings();
+        regularToppings.displaySauces();
+        regularToppings.displaySides();
     }
 
     public void displayPremiumToppings() {

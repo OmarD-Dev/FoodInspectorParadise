@@ -1,13 +1,13 @@
-package org.example;
+package org.example.data;
 
 import java.util.ArrayList;
 
-public class CheapToppings extends Toppings {
+public class RegularToppingsDAO {
     ArrayList<String> regToppings;
     ArrayList<String> sauces;
     ArrayList<String> sides;
 
-    public CheapToppings() {
+    public RegularToppingsDAO() {
         this.regToppings = new ArrayList<>();
         this.sauces = new ArrayList<>();
         this.sides = new ArrayList<>();
@@ -34,18 +34,6 @@ public class CheapToppings extends Toppings {
 
         sides.add("Aus jus");
 
-    }
-
-    public void addRegTopping(String topping) {
-        this.regToppings.add(topping);
-    }
-
-    public void addSauce(String sauce) {
-        this.sauces.add(sauce);
-    }
-
-    public void addSide(String side) {
-        this.sides.add(side);
     }
 
     public void displayRegToppings() {
@@ -96,8 +84,4 @@ public class CheapToppings extends Toppings {
         }
     }
 
-    @Override
-    public double getCost() {
-        return 0;
-    }
 }

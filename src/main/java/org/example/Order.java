@@ -5,12 +5,6 @@ import java.util.List;
 
 public class Order {
     List<EdibleItem>orderItems;
-    //edibleItem interface(){
-    // getPrice()}
-
-    //list<Edibleitems> add drinks, chips, sandwiches
-    //add item
-    //remove item
 
 
     public List<EdibleItem> getOrderItems() {
