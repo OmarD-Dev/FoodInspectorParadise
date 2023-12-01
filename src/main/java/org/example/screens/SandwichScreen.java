@@ -191,10 +191,7 @@ public class SandwichScreen {
     private boolean askForExtraTopping(String topping) {
         System.out.println("Do you want extra " + topping + "? 1. Yes 2. No");
         int extraChoice = userInput.getMenuOption(new int[]{1, 2});
-        if (extraChoice == 1) {
-            return true;
-        }
-        return false;
+        return extraChoice == 1;
     }
 
     public void addCheese(){

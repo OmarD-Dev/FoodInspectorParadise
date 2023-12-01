@@ -128,7 +128,7 @@ public class Sandwich implements PriceableItem {
                 break;
             default:
         }
-        Double premiumToppingsCost = premiumToppings.getTotalMeatPrice(size) +
+        double premiumToppingsCost = premiumToppings.getTotalMeatPrice(size) +
                 premiumToppings.getTotalCheesePrice(size);
         cost += premiumToppingsCost;
         return cost;

@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class PremiumToppings {
-    private ArrayList<Meat> meats = new ArrayList<>();;
+    private ArrayList<Meat> meats = new ArrayList<>();
     private ArrayList<Cheese> cheeses = new ArrayList<>();
 
 
