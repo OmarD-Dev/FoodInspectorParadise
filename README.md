@@ -49,7 +49,7 @@
 ## UML Diagram
   You can find our diagram [here](https://lucid.app/lucidchart/537944a9-9da6-4f60-9415-bdfb470eda8e/edit?beaconFlowId=856B1B2126A79319&invitationId=inv_b28b8fc6-688c-49e0-8cb8-30b843e7a81b&page=0_0#)
   
-  ![deli](https://github.com/OmarD-Dev/FoodInspectorParadise/assets/89672262/4b71c65f-5941-43dc-b57c-707ae1ee3f0e)
+   ![deli](https://github.com/OmarD-Dev/FoodInspectorParadise/assets/89672262/4ca1ec62-2199-4f73-b928-afa5a62e4bdb)
 
 
 
