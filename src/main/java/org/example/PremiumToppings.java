@@ -3,8 +3,8 @@ package org.example;
 import java.util.ArrayList;
 
 public class PremiumToppings implements PriceableItem {
-    private ArrayList<String> meats = new ArrayList<>();;
-    private ArrayList<String> cheeses = new ArrayList<>();
+    private ArrayList<Meat> meats = new ArrayList<>();;
+    private ArrayList<Cheese> cheeses = new ArrayList<>();
 
 
     /*
@@ -30,7 +30,7 @@ public class PremiumToppings implements PriceableItem {
         return meatCost + (extraMeat * 0.5);
     }
 
-    public Double getCheesePrice(int size, int extraCheese) {
+    public double getCheesePrice(int size, int extraCheese) {
         double cheeseCost = 0.0;
         switch (size) {
             case 4:
@@ -49,12 +49,49 @@ public class PremiumToppings implements PriceableItem {
         return cheeseCost + (extraCheese * 0.30);
     }
 
+    public double getTotalCheesePrice(int size){
+        double d = 0;
+        for(Cheese c: cheeses){
+            d+= getCheesePrice(size,c.getExtra());
+        }
+        return d;
+    }
+    public double getTotalMeatPrice(int size){
+        double d = 0;
+        for(Meat m: meats){
+            d+= getMeatPrice(size, m.getExtra());
+        }
+        return d;
+    }
+
     public void addMeat(String meat) {
-        this.meats.add(meat);
+
+        Meat found = null;
+        for (Meat m: meats){
+            if (m.getName().equals(meat)){
+                found = m;
+            }
+        }
+        if (found == null) {
+            this.meats.add(new Meat(meat, 0));
+        } else {
+            found.setExtra( found.getExtra() + 1);
+        }
     }
 
     public void addCheese(String cheese) {
-        this.cheeses.add(cheese);
+
+        Cheese found = null;
+        for (Cheese c: cheeses){
+            if (c.getName().equals(cheese)){
+                found = c;
+            }
+        }
+        if (found == null) {
+            this.cheeses.add(new Cheese(cheese, 0));
+        } else {
+            found.setExtra( found.getExtra() + 1);
+        }
     }
 
 
@@ -62,7 +99,7 @@ public class PremiumToppings implements PriceableItem {
     public void displayMeat() {
         System.out.println("Meats: \n");
         int counter=1;
-        for (String meat : meats) {
+        for (Meat meat : meats) {
             System.out.println(counter +". " + meat);
             counter++;
         }
@@ -71,7 +108,7 @@ public class PremiumToppings implements PriceableItem {
     public void displayCheese() {
         System.out.println("Cheese: \n");
         int counter = 1;
-        for (String cheese : cheeses) {
+        for (Cheese cheese : cheeses) {
             System.out.println(counter +". " + cheese);
             counter++;
         }

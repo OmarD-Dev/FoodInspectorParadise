@@ -8,9 +8,9 @@ public class Sandwich implements PriceableItem {
     private boolean toasted;
     private BreadType breadType;
     //static constants
-    private final int SMALL = 4;
-    private final int MEDIUM = 8;
-    private final int LARGE = 12;
+    private static final int SMALL = 4;
+    private static final int MEDIUM = 8;
+    private static final int LARGE = 12;
 
     private int meatCounter = 0;
     private int cheeseCounter = 0;
@@ -21,8 +21,7 @@ public class Sandwich implements PriceableItem {
     private PremiumToppings premiumToppings;
 
     public Sandwich() {
-        this.regularToppings = new RegularToppings();
-        this.premiumToppings = new PremiumToppings();
+       this(MEDIUM, BreadType.WHEAT, false);
     }
 
     public Sandwich(int size, BreadType breadType, boolean toasted) {
@@ -91,27 +90,6 @@ public class Sandwich implements PriceableItem {
         this.cheeseCounter++;
     }
 
-
-    public Double sandwichCost() {
-        cost = breadType.getBreadCost();
-        switch (size) {
-            case SMALL:
-                cost += 0;
-                break;
-            case MEDIUM:
-                cost += 1.50;
-                break;
-            case LARGE:
-                cost += 3.00;
-            default:
-                System.out.println("");
-        }
-        Double premiumToppingsCost = premiumToppings.getMeatPrice(size, 0) +
-                premiumToppings.getCheesePrice(size, 0);
-        cost += premiumToppingsCost;
-        return cost;
-    }
-
     public void displayRegularToppings() {
         regularToppings.displayRegToppings();
         regularToppings.displaySauces();
@@ -125,6 +103,22 @@ public class Sandwich implements PriceableItem {
 
     @Override
     public double getPrice() {
-        return 0;
+        cost = breadType.getBreadCost();
+        switch (size) {
+            case SMALL:
+                cost += 0;
+                break;
+            case MEDIUM:
+                cost += 1.50;
+                break;
+            case LARGE:
+                cost += 3.00;
+                break;
+            default:
+        }
+        Double premiumToppingsCost = premiumToppings.getTotalMeatPrice(size) +
+                premiumToppings.getTotalCheesePrice(size);
+        cost += premiumToppingsCost;
+        return cost;
     }
 }
