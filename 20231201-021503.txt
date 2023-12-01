@@ -1,0 +1,5 @@
+Order Details:
+Drink{drinkType=FANTA, drinkSize=MEDIUM}- $2.5
+Chips{flavor=DORITOS}- $1.5
+Drink{drinkType=PEPSI, drinkSize=SMALL}- $2.0
+Total: $6.0

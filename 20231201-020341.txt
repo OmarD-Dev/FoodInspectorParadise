@@ -1,0 +1,6 @@
+Order Details:
+Sandwich{size=4, cost=5.5, toasted=false, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[], cheeses=[]}}- $5.5
+Sandwich{size=4, cost=5.5, toasted=true, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[], cheeses=[]}}- $5.5
+Sandwich{size=4, cost=7.0, toasted=false, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[Steak], cheeses=[]}}- $7.0
+Sandwich{size=4, cost=8.0, toasted=false, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[Steak], cheeses=[]}}- $8.0
+Total: $26.0

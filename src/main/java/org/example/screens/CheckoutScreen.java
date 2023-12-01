@@ -7,7 +7,7 @@ import org.example.utils.UserInput;
 
 public class CheckoutScreen {
     private Order order;
-    private int[]menuOptions= {0,1};
+    private int[] menuOptions= {1,2};
 
     private UserInput userInput;
 
@@ -27,11 +27,13 @@ public class CheckoutScreen {
         int option = userInput.getMenuOption(menuOptions);
         switch (option) {
             case 1:
-                System.out.println("Order Confirmed");
+                System.out.println("Order Confirmed!");
                 Receipt.generateReceipt(order);
+                System.exit(0);
                 break;
             case 2:
                 System.out.println("Order Cancelled");
+                System.exit(0);
                 break;
             default:
                 System.out.println("Something went wrong, please try again.");

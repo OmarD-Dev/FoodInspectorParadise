@@ -1,0 +1,4 @@
+Order Details:
+Drink{drinkType=PEPSI, drinkSize=MEDIUM}- $2.5
+Sandwich{size=12, cost=11.5, toasted=false, breadType=WHITE, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[Ham], cheeses=[]}}- $11.5
+Total: $14.0
