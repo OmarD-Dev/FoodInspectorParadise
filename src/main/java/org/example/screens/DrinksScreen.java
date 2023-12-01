@@ -6,7 +6,6 @@ import org.example.utils.UserInput;
 
 public class DrinksScreen {
     private Order order;
-    private int[] menuOptions={0,1,2,3,4,5,6};
     private UserInput userInput;
     public DrinksScreen(UserInput userInput, Order order) {
         this.order=order;
@@ -22,10 +21,4 @@ public class DrinksScreen {
         Drink drink = new Drink(DrinkFlavor.values()[choice -1],DrinkSize.values()[sizeChoice-1]);
         order.addOrderItem(drink);
     }
-
-
-
-
-    // the same as chips screen
-    // can be merged according to the idea I put in chipsScreen
 }

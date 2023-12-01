@@ -7,7 +7,6 @@ import org.example.utils.UserInput;
 
 public class OrderScreen {
     private Order order;
-    private int[] menuOptions={0,1,2,3,4};
 
     private UserInput userInput;
 
