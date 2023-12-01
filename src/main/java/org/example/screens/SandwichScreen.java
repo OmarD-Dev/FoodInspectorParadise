@@ -9,7 +9,7 @@ public class SandwichScreen {
 
     private Order order;
     Sandwich sandwich;
-    private int[] menuOptions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private int[] menuOptions = {0, 1, 2, 3, 4, 5, 6, 7};
 
     private UserInput userInput;
     PremiumToppingsDAO premiumToppingsDAO = new PremiumToppingsDAO();

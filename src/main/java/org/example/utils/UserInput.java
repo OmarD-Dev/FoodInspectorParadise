@@ -41,20 +41,8 @@ public class UserInput {
         return userInput;
     }
 
-    public void closeScanner() {
-        scanner.close();
-    }
-
     public void promptUser(String prompt){
         System.out.println(prompt + "\n");
-    }
-    public char getCharInput() {
-        String userInput = scanner.nextLine().toUpperCase().trim();
-        if (!userInput.isEmpty()) {
-            return userInput.charAt(0);
-        } else {
-            return getCharInput();
-        }
     }
 
 }

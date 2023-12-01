@@ -4,8 +4,6 @@ import org.example.utils.UserInput;
 import org.example.utils.ScreenDisplay;
 
 public class HomeScreen {
-
-    private final int[] menuOptions = {0, 1};
     private UserInput userInput;
 
     public void startHomeScreen(UserInput userInput) {

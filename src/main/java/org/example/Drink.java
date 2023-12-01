@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.PropertyResourceBundle;
-
 public class Drink implements PriceableItem {
     private DrinkFlavor drinkType;
     private DrinkSize drinkSize;
