@@ -1,6 +1,9 @@
 package org.example.utils;
 
 import org.example.ChipFlavor;
+import org.example.DrinkFlavor;
+import org.example.DrinkSize;
+import org.example.Order;
 
 public class ScreenDisplay {
     public static void displayHomeScreen() {
@@ -33,29 +36,33 @@ public class ScreenDisplay {
                 3) Would you like your sandwich toasted?
                 """);
     }
-    public static void displayCheckoutScreen() {
+    public static void displayCheckoutScreen(Order order) {
+        System.out.println("Here's your order:");
+        System.out.println(order);
         System.out.println("""
-                Here's your order:
+                
                 1) Confirm
                 2) Cancel
                 """);
     }
     public static void displayDrinksScreen() {
-        System.out.println("""
-                Pick a drink option:
-                1. Coca-Cola
-                2. Pepsi
-                3. Fanta
-                4. Sprite
-                5. Mountain Dew
-                6. Dr. Pepper
-                7. No Drink
-                """);
+        System.out.println("Here's our Drinks");
+        for(DrinkFlavor flavor: DrinkFlavor.values()){
+            System.out.println(flavor.ordinal()+1 + ") " +flavor.getName());
+        }
     }
+
+    public static void displaySizeScreen(){
+        System.out.println("Here's our Sizes");
+        for(DrinkSize size: DrinkSize.values()){
+            System.out.println(size.ordinal()+1 + ") " + size);
+        }
+    }
+
     public static void displayChipsScreen() {
         System.out.println("Here's our Chips");
         for(ChipFlavor flavor: ChipFlavor.values()){
-            System.out.println(flavor.getInt()+") "+flavor.getName());
+            System.out.println(flavor.ordinal()+1 + ") " +flavor.getName());
         }
     }
 }

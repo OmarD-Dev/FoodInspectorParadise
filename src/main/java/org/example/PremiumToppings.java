@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class PremiumToppings implements PriceableItem {
+public class PremiumToppings {
     private ArrayList<Meat> meats = new ArrayList<>();;
     private ArrayList<Cheese> cheeses = new ArrayList<>();
 
@@ -115,7 +115,10 @@ public class PremiumToppings implements PriceableItem {
     }
 
     @Override
-    public double getPrice() {
-        return 0;
+    public String toString() {
+        return "PremiumToppings{" +
+                "meats=" + meats +
+                ", cheeses=" + cheeses +
+                '}';
     }
 }

@@ -1,17 +1,13 @@
 package org.example.screens;
 
+import org.example.ChipFlavor;
+import org.example.Chips;
 import org.example.Order;
 import org.example.utils.ScreenDisplay;
 import org.example.utils.UserInput;
 
 public class ChipsScreen {
-    // start with a build function
-    // takes in an orderscreen so that we can go back
-        /* we could also merge this with drinks screen and have them just print out the options with an associate number
-            then we can just match the number to whatever object it correlates to.
-        */
     private Order order;
-    private int[] menuOptions={1,2,3,4,9};
 
     private UserInput userInput;
     public ChipsScreen( UserInput userInput,Order order) {
@@ -23,36 +19,10 @@ public class ChipsScreen {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         ScreenDisplay.displayChipsScreen();
-        //this.awaitSelect();
+        int choice = userInput.getUserInput();
+        Chips chip = new Chips(ChipFlavor.values()[choice -1]);
+        order.addOrderItem(chip);
     }
-   /* public void awaitSelect() {
-        int option = userInput.getMenuOption(menuOptions);
-        switch (option) {
-            case 0:
-                order.addOrderItem(c);
-                // I'm not tryna figure out the enums rn its frying my brain so I'm goint o just do the drinks class first
-                break;
-            case 1:
 
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 9:
-                break;
-
-
-            default:
-                System.out.println("Something went wrong, please try again.");
-                break;
-        }
-    }
-    // the same as chips screen
-    // can be merged according to the idea I put in chipsScreen
-
-    */
 }
 

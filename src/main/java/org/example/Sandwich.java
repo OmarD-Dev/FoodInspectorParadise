@@ -102,6 +102,18 @@ public class Sandwich implements PriceableItem {
     }
 
     @Override
+    public String toString() {
+        return "Sandwich{" +
+                "size=" + size +
+                ", cost=" + cost +
+                ", toasted=" + toasted +
+                ", breadType=" + breadType +
+                ", regularToppings=" + regularToppings +
+                ", premiumToppings=" + premiumToppings +
+                '}';
+    }
+
+    @Override
     public double getPrice() {
         cost = breadType.getBreadCost();
         switch (size) {

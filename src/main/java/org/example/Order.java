@@ -15,8 +15,8 @@ public class Order {
         this.orderItems= new ArrayList<>();
     }
 
-    public void addOrderItem(PriceableItem edible){
-        orderItems.add(edible);
+    public void addOrderItem(PriceableItem item){
+        orderItems.add(item);
     }
 
     public double calculateTotal(){
@@ -32,6 +32,7 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "orderItems=" + orderItems +
+                calculateTotal()+
                 '}';
     }
 }

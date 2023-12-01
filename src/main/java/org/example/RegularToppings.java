@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class RegularToppings implements PriceableItem {
+public class RegularToppings{
     ArrayList<String> regToppings=new ArrayList<>();
     ArrayList<String> sauces=new ArrayList<>();
     ArrayList<String> sides= new ArrayList<>();
@@ -48,7 +48,11 @@ public class RegularToppings implements PriceableItem {
     }
 
     @Override
-    public double getPrice() {
-        return 0;
+    public String toString() {
+        return "RegularToppings{" +
+                "regToppings=" + regToppings +
+                ", sauces=" + sauces +
+                ", sides=" + sides +
+                '}';
     }
 }
