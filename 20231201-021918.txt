@@ -1,3 +1,0 @@
-Order Details:
-Drink{drinkType=COCA_COLA, drinkSize=SMALL}- $2.0
-Total: $2.0

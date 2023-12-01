@@ -1,3 +1,0 @@
-Order Details:
-Sandwich{size=4, cost=7.3, toasted=false, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[], cheeses=[Cheddar, American]}}- $7.3
-Total: $7.3

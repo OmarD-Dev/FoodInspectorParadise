@@ -93,9 +93,8 @@ public class SandwichScreen {
             System.out.println("""
                     Customize your sandwich:
                      1. Add Toppings
-                     2. Remove Toppings
-                     3. Toast the Sandwich
-                     4. Finish Customization
+                     2. Toast the Sandwich
+                     3. Finish Customization
                     """);
             int customizationOption = userInput.getMenuOption(menuOptions);
             switch (customizationOption) {
@@ -104,11 +103,10 @@ public class SandwichScreen {
                     break;
                 case 2:
                     //removeToppings();
-                    break;
-                case 3:
                     toastSandwich();
                     break;
-                case 4:
+
+                case 3:
                     continueCustomizing = false;
                     order.addOrderItem(sandwich);
                     break;
@@ -250,7 +248,7 @@ public class SandwichScreen {
             addSauces();
         }
     }
-
+    //dead code
     public void removeToppings() {
         System.out.println("Remove Toppings:");
         //displayCurrentToppings(); // Display current toppings on the sandwich
