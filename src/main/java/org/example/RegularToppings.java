@@ -46,13 +46,19 @@ public class RegularToppings{
             counter++;
         }
     }
-
     @Override
     public String toString() {
-        return "RegularToppings{" +
-                "regToppings=" + regToppings +
-                ", sauces=" + sauces +
-                ", sides=" + sides +
-                '}';
+        StringBuilder result = new StringBuilder("Regular Toppings: ");
+        for (String topping : regToppings) {
+            result.append(topping).append(", ");
+        }
+        for (String sauce : sauces) {
+            result.append(sauce).append(", ");
+        }
+        for (String side : sides) {
+            result.append(side).append(", ");
+        }
+        result.delete(result.length() - 2, result.length());
+        return result.toString();
     }
 }

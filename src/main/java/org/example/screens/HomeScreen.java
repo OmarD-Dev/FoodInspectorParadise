@@ -1,7 +1,6 @@
 package org.example.screens;
 
 import org.example.utils.UserInput;
-import org.example.utils.ScreenDisplay;
 
 public class HomeScreen {
     private UserInput userInput;
@@ -32,10 +31,11 @@ public class HomeScreen {
     }
     public static void displayHomeScreen() {
         System.out.println("""
-                Welcome to Food Inspector Paradise!
+                \nWelcome to Food Inspector Paradise!
+                
                 Please Enter One of The Following Options:
-                1) New Order
-                0) Exit
+                1. New Order
+                0. Exit
                 """);
     }
 

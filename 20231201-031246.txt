@@ -1,6 +1,0 @@
-Order Details:
-Sandwich{size=8, cost=7.0, toasted=false, breadType=WHEAT, regularToppings=RegularToppings{regToppings=[Ketchup, Ketchup], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[], cheeses=[]}}- $7.0
-Drink{drinkType=FANTA, drinkSize=SMALL}- $2.0
-Chips{flavor=DORITOS}- $1.5
-Sandwich{size=12, cost=11.05, toasted=false, breadType=WRAP, regularToppings=RegularToppings{regToppings=[], sauces=[], sides=[]}, premiumToppings=PremiumToppings{meats=[], cheeses=[American]}}- $11.05
-Total: $21.55

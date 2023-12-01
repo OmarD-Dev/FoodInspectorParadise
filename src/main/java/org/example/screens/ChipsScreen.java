@@ -3,7 +3,6 @@ package org.example.screens;
 import org.example.ChipFlavor;
 import org.example.Chips;
 import org.example.Order;
-import org.example.utils.ScreenDisplay;
 import org.example.utils.UserInput;
 
 public class ChipsScreen {
@@ -24,9 +23,9 @@ public class ChipsScreen {
         order.addOrderItem(chip);
     }
     public static void displayChipsScreen() {
-        System.out.println("Here's our Chips");
+        System.out.println("\nHere's our Chips:");
         for(ChipFlavor flavor: ChipFlavor.values()){
-            System.out.println(flavor.ordinal()+1 + ") " +flavor.getName());
+            System.out.println(flavor.ordinal()+1 + ". " +flavor.getName());
         }
     }
 

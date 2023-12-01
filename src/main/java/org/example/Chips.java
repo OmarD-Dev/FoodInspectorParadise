@@ -8,19 +8,16 @@ public class Chips implements PriceableItem {
         this.flavor = flavor;
     }
 
+
     @Override
     public String toString() {
-        return "Chips{" +
-                "flavor=" + flavor +
-                '}';
+            return String.format("Chips - Flavor: %s $%.2f", flavor,getPrice());
     }
+
 
     @Override
     public double getPrice() {
         return cost;
     }
-    //enum for type of chips
-    // we can also implement it as an int for size since the user isn't directly typing into the program it's up to us to store it
-
 
 }

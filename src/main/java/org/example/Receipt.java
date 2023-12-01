@@ -12,9 +12,9 @@ public class Receipt {
         try(BufferedWriter writer= new BufferedWriter(new FileWriter(filename))){
             writer.write("Order Details:\n");
             for(PriceableItem i : order.getOrderItems()){
-                writer.write(i.toString()+"- $" + i.getPrice() + "\n");
+                writer.write(i.toString()+ "\n");
             }
-            writer.write("Total: $" + order.calculateTotal());
+            writer.write("Total: $ " + order.calculateTotal());
         }catch (IOException e){
             e.printStackTrace();
         }

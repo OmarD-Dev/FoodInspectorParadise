@@ -9,7 +9,7 @@ public class SandwichScreen {
 
     private Order order;
     Sandwich sandwich;
-    private int[] menuOptions = {0, 1, 2, 3, 4, 5, 6, 7};
+    private int[] menuOptions = {0, 1, 2, 3, 4, 5, 6, 7,8,9};
 
     private UserInput userInput;
     PremiumToppingsDAO premiumToppingsDAO = new PremiumToppingsDAO();
@@ -24,7 +24,7 @@ public class SandwichScreen {
 
     public void startSandwichScreen() {
         System.out.println("""
-                What bread would you like?
+                \nWhat bread would you like?
                 1. Wheat
                 2. White
                 3. Rye
@@ -65,7 +65,7 @@ public class SandwichScreen {
 
     public void getBreadSize() {
         userInput.promptUser("""
-                Pick a size: 
+               \nPick a size: 
                 1. 4 in. 
                 2. 8 in. 
                 3. 12 in.
@@ -91,7 +91,7 @@ public class SandwichScreen {
         boolean continueCustomizing = true;
         while (continueCustomizing) {
             System.out.println("""
-                    Customize your sandwich:
+                    \nCustomize your sandwich:
                      1. Add Toppings
                      2. Toast the Sandwich
                      3. Finish Customization
@@ -121,7 +121,7 @@ public class SandwichScreen {
         boolean continueAddingToppings = true;
         while (continueAddingToppings) {
             System.out.println("""
-                    Add Toppings:
+                    \nAdd Toppings:
                     1. Add Meats
                     2. Add Cheeses
                     3. Add Other Toppings
@@ -155,20 +155,19 @@ public class SandwichScreen {
     }
 
     public void toastSandwich(){
-        System.out.print("\nWould you like to toast your sandwich? \n 1. Yes 2. No: ");
+        System.out.print("\nWould you like to toast your sandwich?  1. Yes 2. No: ");
         int toastChoice = userInput.getMenuOption(menuOptions);
         if(toastChoice == 1){
             sandwich.setToasted(true);
-            System.out.println("Your sandwich will be toasted.\n");
+            System.out.println("Your sandwich will be toasted.");
         }
         else{
             sandwich.setToasted(false);
-            System.out.println("We will not toast your sandwich.\n");
+            System.out.println("We will not toast your sandwich.");
         }
     }
 
     public void addMeats() {
-        System.out.println("\nAdd Meats: ");
         premiumToppingsDAO.displayMeat();
         int meatOption = userInput.getMenuOption(menuOptions);
         String selectedMeat = premiumToppingsDAO.getMeat(meatOption);
@@ -187,13 +186,12 @@ public class SandwichScreen {
     }
 
     private boolean askForExtraTopping(String topping) {
-        System.out.println("Do you want extra " + topping + "? 1. Yes 2. No");
+        System.out.println("\nDo you want extra " + topping + "? 1. Yes 2. No");
         int extraChoice = userInput.getMenuOption(new int[]{1, 2});
         return extraChoice == 1;
     }
 
     public void addCheese(){
-        System.out.println("\nAdd Cheese:");
         premiumToppingsDAO.displayCheese();
         int cheeseOption = userInput.getMenuOption(menuOptions);
         String selectedCheese = premiumToppingsDAO.getCheese(cheeseOption);
@@ -216,17 +214,17 @@ public class SandwichScreen {
         regularToppingsDAO.displayRegToppings();
         int toppingOption = userInput.getMenuOption(menuOptions);
         String selectedTopping = regularToppingsDAO.getRegTopping(toppingOption);
-        if (selectedTopping != null && sandwich.getRegToppingCounter() < 3) {
+        if (selectedTopping != null && sandwich.getRegToppingCounter() < 12) {
             System.out.println("You selected: " + selectedTopping);
             sandwich.addCheapTopping(selectedTopping);
             if (askForExtraTopping(selectedTopping)) {
                 sandwich.addCheapTopping(selectedTopping);
             }
-        } else if (sandwich.getCheeseCounter() >= 3) {
-            System.out.println("That's too much cheese.");
+        } else if (sandwich.getRegToppingCounter() >= 12) {
+            System.out.println("That's a really big sandwich.");
         } else {
-            System.out.println("Invalid Cheese option. Please choose again");
-            addCheese();
+            System.out.println("Invalid topping. Please choose again");
+            addOtherToppings();
         }
     }
 
@@ -248,58 +246,4 @@ public class SandwichScreen {
             addSauces();
         }
     }
-    //dead code
-    public void removeToppings() {
-        System.out.println("Remove Toppings:");
-        //displayCurrentToppings(); // Display current toppings on the sandwich
-
-        System.out.println("""
-            Select Topping Category to Remove:
-            1. Remove Meats
-            2. Remove Cheeses
-            3. Remove Other Toppings
-            4. Finish Removing Toppings
-            """);
-
-        int categoryOption = userInput.getMenuOption(menuOptions);
-
-        switch (categoryOption) {
-            case 1:
-                //removeMeats();
-                break;
-            case 2:
-                //removeCheese();
-                break;
-            case 3:
-                //removeOtherToppings();
-                break;
-            case 4:
-                //removeSauces()
-                break;
-            case 5:
-                // Finish removing toppings
-                break;
-            default:
-                System.out.println("Invalid option. Please try again.");
-                break;
-        }
-    }
-
-   /* private void removeMeats() {
-        System.out.println("Remove Meats:");
-         // Display current meat toppings
-        int meatOption = userInput.getMenuOption(menuOptions);
-        String removedMeat = sandwich.getMeat(meatOption);
-
-        if (removedMeat != null) {
-            System.out.println("Removing " + removedMeat);
-            sandwich.removeMeat(removedMeat);
-        } else {
-            System.out.println("Invalid meat option. Please choose again.");
-            removeMeats();
-        }
-    }*/
-
-
-
 }
