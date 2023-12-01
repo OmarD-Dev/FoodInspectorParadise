@@ -19,7 +19,7 @@ public class CheckoutScreen {
     public void startCheckoutScreen(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        ScreenDisplay.displayCheckoutScreen(order);
+        displayCheckoutScreen(order);
         this.awaitSelect();
     }
 
@@ -39,5 +39,14 @@ public class CheckoutScreen {
                 System.out.println("Something went wrong, please try again.");
                 break;
         }
+    }
+    public static void displayCheckoutScreen(Order order) {
+        System.out.println("Here's your order:");
+        System.out.println(order);
+        System.out.println("""
+                
+                1) Confirm
+                2) Cancel
+                """);
     }
 }

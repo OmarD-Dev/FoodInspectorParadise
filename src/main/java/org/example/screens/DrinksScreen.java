@@ -14,11 +14,23 @@ public class DrinksScreen {
     public void startDrinksScreen(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        ScreenDisplay.displayDrinksScreen();
+        displayDrinksScreen();
         int choice = userInput.getUserInput();
-        ScreenDisplay.displaySizeScreen();
+        displaySizeScreen();
         int sizeChoice= userInput.getUserInput();
         Drink drink = new Drink(DrinkFlavor.values()[choice -1],DrinkSize.values()[sizeChoice-1]);
         order.addOrderItem(drink);
+    }
+    public static void displayDrinksScreen() {
+        System.out.println("Here's our Drinks");
+        for(DrinkFlavor flavor: DrinkFlavor.values()){
+            System.out.println(flavor.ordinal()+1 + ") " +flavor.getName());
+        }
+    }
+    public static void displaySizeScreen(){
+        System.out.println("Here's our Sizes");
+        for(DrinkSize size: DrinkSize.values()){
+            System.out.println(size.ordinal()+1 + ") " + size);
+        }
     }
 }

@@ -21,7 +21,7 @@ public class OrderScreen {
             System.out.print("\033[H\033[2J");
             System.out.flush();
 
-            ScreenDisplay.displayOrderScreen();
+            displayOrderScreen();
             int option = userInput.getUserInput();
             switch (option) {
                 case 1:
@@ -60,6 +60,18 @@ public class OrderScreen {
 
 
     }
+    public static void displayOrderScreen() {
+        System.out.println("""
+                Hello! What Would You Like to Order?
+                Please Enter One of The Following Options:
+                1) Add Sandwich
+                2) Add Drink
+                3) Add Chips
+                4) Checkout
+                5) Cancel Order
+                """);
+    }
+
 }
     //build function
     //await select function with the menu options
