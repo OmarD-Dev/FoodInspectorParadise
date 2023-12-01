@@ -21,16 +21,13 @@ public class Drink implements PriceableItem {
 
             case LARGE:
                 return 3.00;
-
         }
         return 0;
     }
-
     @Override
     public String toString() {
-        return "Drink{" +
-                "drinkType=" + drinkType +
-                ", drinkSize=" + drinkSize +
-                '}';
+        return String.format("Drink - Type: %s, Size: %s , $%.2f", drinkType, drinkSize,getPrice());
     }
+
+
 }

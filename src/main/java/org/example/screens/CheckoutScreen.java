@@ -2,7 +2,6 @@ package org.example.screens;
 
 import org.example.Order;
 import org.example.Receipt;
-import org.example.utils.ScreenDisplay;
 import org.example.utils.UserInput;
 
 public class CheckoutScreen {
@@ -41,12 +40,12 @@ public class CheckoutScreen {
         }
     }
     public static void displayCheckoutScreen(Order order) {
-        System.out.println("Here's your order:");
+        System.out.println("\nHere's your order:");
         System.out.println(order);
         System.out.println("""
                 
-                1) Confirm
-                2) Cancel
+                1. Confirm
+                2. Cancel
                 """);
     }
 }

@@ -113,12 +113,16 @@ public class PremiumToppings {
             counter++;
         }
     }
-
     @Override
     public String toString() {
-        return "PremiumToppings{" +
-                "meats=" + meats +
-                ", cheeses=" + cheeses +
-                '}';
+        StringBuilder result = new StringBuilder("Premium Toppings: ");
+        for (Meat meat : meats) {
+            result.append(meat).append(", ");
+        }
+        for (Cheese cheese : cheeses) {
+            result.append(cheese).append(", ");
+        }
+        result.delete(result.length() - 2, result.length());
+        return result.toString().trim();
     }
 }

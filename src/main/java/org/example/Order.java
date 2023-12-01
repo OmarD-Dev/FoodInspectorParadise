@@ -27,7 +27,6 @@ public class Order {
         return total;
     }
 
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -36,12 +35,8 @@ public class Order {
             builder.append(item.toString());
             builder.append("\n");
         }
-        builder.append("Total: ").append(calculateTotal());
+        builder.append(String.format("Total: $%.2f",calculateTotal()));
         return builder.toString();
     }
 
-//    return "Order Items\n"
-//            + orderItems +
-//    calculateTotal()+
-//            '}';
 }
