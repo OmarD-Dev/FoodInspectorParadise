@@ -10,6 +10,7 @@ public class UserInput {
         this.scanner= new Scanner(System.in);
     }
 
+    //TODO Delete when possible
     public int getMenuOption(int[] menuOptions){
     int option = -1;
     boolean isValid= false;
@@ -23,7 +24,6 @@ public class UserInput {
             scanner.nextLine();
         }
     }
-
     return option;
     }
     public boolean isValidOption(int userOption, int []menuOptions ){
@@ -34,6 +34,11 @@ public class UserInput {
         }
         System.out.println("Not an option sorry !");
         return false;
+    }
+    public int getUserInput(){
+        int userInput= scanner.nextInt();
+        scanner.nextLine();
+        return userInput;
     }
 
     public void closeScanner() {

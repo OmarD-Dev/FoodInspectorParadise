@@ -9,10 +9,8 @@ public class DrinksScreen {
     private Drinks drinksMenu = new Drinks();
     private Order order;
     private int[] menuOptions={0,1,2,3,4,5,6};
-    private OrderScreen back;
     private UserInput userInput;
-    public DrinksScreen(OrderScreen back, UserInput userInput,Order order) {
-        this.back = back;
+    public DrinksScreen(UserInput userInput, Order order) {
         this.order=order;
         this.userInput=userInput;
     }
@@ -31,6 +29,9 @@ public class DrinksScreen {
             System.out.println("Invalid selection");
         }
     }
+
+
+
     // the same as chips screen
     // can be merged according to the idea I put in chipsScreen
 }

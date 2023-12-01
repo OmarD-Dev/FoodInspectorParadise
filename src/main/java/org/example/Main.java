@@ -9,6 +9,5 @@ public class Main {
         HomeScreen homeScreen = new HomeScreen();
         UserInput userInput = new UserInput();
         homeScreen.startHomeScreen(userInput);
-        homeScreen.closeUserInput();
     }
 }

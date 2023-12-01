@@ -10,13 +10,13 @@ public class SandwichScreen {
     private Order order;
     Sandwich sandwich;
     private int[] menuOptions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private OrderScreen back;
+
     private UserInput userInput;
     PremiumToppingsDAO premiumToppingsDAO = new PremiumToppingsDAO();
     RegularToppingsDAO regularToppingsDAO = new RegularToppingsDAO();
 
-    public SandwichScreen(OrderScreen back, UserInput userInput, Order order) {
-        this.back = back;
+    public SandwichScreen(UserInput userInput, Order order) {
+
         this.userInput = userInput;
         this.sandwich = new Sandwich();
         this.order = order;
@@ -111,7 +111,6 @@ public class SandwichScreen {
                 case 4:
                     continueCustomizing = false;
                     order.addOrderItem(sandwich);
-                    back.startOrderScreen();
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");

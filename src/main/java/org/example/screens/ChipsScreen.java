@@ -12,10 +12,9 @@ public class ChipsScreen {
         */
     private Order order;
     private int[] menuOptions={1,2,3,4,9};
-    private OrderScreen back;
+
     private UserInput userInput;
-    public ChipsScreen(OrderScreen back, UserInput userInput,Order order) {
-        this.back = back;
+    public ChipsScreen( UserInput userInput,Order order) {
         this.order=order;
         this.userInput=userInput;
     }

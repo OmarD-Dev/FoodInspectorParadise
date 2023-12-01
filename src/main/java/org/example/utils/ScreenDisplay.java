@@ -20,7 +20,7 @@ public class ScreenDisplay {
                 2) Add Drink
                 3) Add Chips
                 4) Checkout
-                0) Cancel Order
+                5) Cancel Order
                 """);
     }
 
