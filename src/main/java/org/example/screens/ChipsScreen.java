@@ -18,10 +18,16 @@ public class ChipsScreen {
     public void startChipsScreen(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        ScreenDisplay.displayChipsScreen();
+        displayChipsScreen();
         int choice = userInput.getUserInput();
         Chips chip = new Chips(ChipFlavor.values()[choice -1]);
         order.addOrderItem(chip);
+    }
+    public static void displayChipsScreen() {
+        System.out.println("Here's our Chips");
+        for(ChipFlavor flavor: ChipFlavor.values()){
+            System.out.println(flavor.ordinal()+1 + ") " +flavor.getName());
+        }
     }
 
 }

@@ -1,0 +1,3 @@
+Order Details:
+Drink{drinkType=PEPSI, drinkSize=SMALL}- $2.0
+Total: $2.0

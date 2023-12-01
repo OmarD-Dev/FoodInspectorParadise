@@ -30,9 +30,18 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "orderItems=" + orderItems +
-                calculateTotal()+
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append("Order Items\n");
+        for (PriceableItem item : orderItems) {
+            builder.append(item.toString());
+            builder.append("\n");
+        }
+        builder.append("Total: ").append(calculateTotal());
+        return builder.toString();
     }
+
+//    return "Order Items\n"
+//            + orderItems +
+//    calculateTotal()+
+//            '}';
 }
